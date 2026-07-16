@@ -1,0 +1,9 @@
+# Temp files
+.gemini/
+.DS_Store
+Thumbs.db
+
+# Project reference materials that don't need to be public (optional)
+# Add them if you want to keep your repo light
+# reference/code.html
+# reference/screen.png

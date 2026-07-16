@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Bhumit — Full-Stack Developer & Aspiring AI Engineer. I build intelligent web applications powered by NLP, real-time backends, and modern frontend frameworks." />
+    <meta property="og:title" content="Bhumit | Full-Stack Developer & AI Engineer" />
+    <meta property="og:description" content="I build intelligent web applications powered by NLP, real-time backends, and modern frontend frameworks." />
+    <meta property="og:type" content="website" />
+    <title>Bhumit | Full-Stack Developer & AI Engineer</title>
+    <link rel="stylesheet" href="assets/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="logo">
+                <span class="logo-text">B</span>humit<span class="logo-dot">.</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#about" class="nav-link" data-text="About">About</a>
+                <a href="#whatido" class="nav-link" data-text="What I Do">What I Do</a>
+                <a href="#skills" class="nav-link" data-text="Skills">Skills</a>
+                <a href="#projects" class="nav-link" data-text="Projects">Projects</a>
+                <a href="#experience" class="nav-link" data-text="Experience">Experience</a>
+                <a href="#certifications" class="nav-link" data-text="Certs">Certs</a>
+                <a href="#contact" class="nav-link" data-text="Contact">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <a href="#contact" class="btn-hire">
+                    <span class="btn-hire-dot"></span>
+                    Hire Me
+                </a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#skills" class="mobile-link">Skills</a>
+        <a href="#projects" class="mobile-link">Projects</a>
+        <a href="#experience" class="mobile-link">Experience</a>
+        <a href="#certifications" class="mobile-link">Certifications</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="home">
+        <canvas class="hero-canvas" id="heroCanvas"></canvas>
+        <div class="hero-content animate-fade-in">
+
+            <h1 class="hero-title reveal-up delay-1">
+                Hi, I'm <span class="text-grad">Bhumit</span>.
+            </h1>
+
+            <p class="hero-subtitle reveal-up delay-2">
+                <span id="typewriter-subtitle" style="font-weight: 700; color: var(--text-1);"></span>
+            </p>
+            <div class="terminal-widget reveal-up delay-3" id="heroTerminal">
+                <div class="term-header">
+                    <div class="term-dots">
+                        <span class="term-dot red"></span>
+                        <span class="term-dot yellow"></span>
+                        <span class="term-dot green"></span>
+                    </div>
+                    <div class="term-title">bhumit@portfolio: ~</div>
+                </div>
+                <div class="term-body" id="terminalBody">
+                    <div class="term-output" id="terminalOutput">
+                        <p class="term-line">// Booting Bhumit OS [v1.0.4]...</p>
+                        <p class="term-line">// Core modules: Full-Stack Dev, AI speech pipelines, Supabase DB.</p>
+                        <p class="term-line text-success">System online. Type 'help' to begin exploring.</p>
+                    </div>
+                    <div class="term-input-line">
+                        <span class="term-prompt">bhumit@portfolio:~$</span>
+                        <input type="text" class="term-input" id="terminalInput" autocomplete="off" spellcheck="false" placeholder="type 'help'..."/>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-stats reveal-up delay-3">
+                <div class="stat-item">
+                    <span class="stat-num" data-target="4">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Projects Built</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num" data-target="3">0</span><span class="stat-plus"></span>
+                    <span class="stat-label">Tech Domains</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num" data-target="100">0</span><span class="stat-plus">%</span>
+                    <span class="stat-label">Committed</span>
+                </div>
+            </div>
+            <!-- Resume Download CTA -->
+            <div class="hero-resume-cta reveal-up delay-3">
+                <a href="reference/BHUMIT VASAVA  (2).pdf" download="Bhumit_Vasava_Resume.pdf" class="btn-resume" id="resumeDownloadBtn" aria-label="Download Resume">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    Download Resume
+                    <span class="btn-resume-badge">PDF</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT SECTION (BENTO GRID) ===== -->
+    <section class="section parallax-section" id="about">
+        <div class="container">
+            <div class="section-label reveal-up">01 — About</div>
+            <h2 class="section-title reveal-up delay-1">
+                More than a developer.<br /><span class="text-grad">A builder.</span>
+            </h2>
+
+            <div class="bento-grid">
+                <!-- Bio Card -->
+                <div class="bento-card bento-bio tilt-3d reveal-up delay-1">
+                    <div class="bento-tag">Bio</div>
+                    <h3>Co-founder &<br />Full-Stack Developer</h3>
+                    <p>I'm a Full-Stack Developer co-founding Pixel Forge Agency. I build clean web architectures, connect cloud databases, and actively study AI engineering to integrate speech models and NLP pipelines into real-world applications. My focus is always on building functional tools that go beyond basic API wrappers into production-ready products.</p>
+                    <div class="bio-links">
+                        <a href="https://github.com/BOOM-08" target="_blank" rel="noopener noreferrer" class="bio-link" aria-label="GitHub">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/bhumit-vasava-24565b357?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                            target="_blank" rel="noopener noreferrer" class="bio-link" aria-label="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/08__boom?igsh=MWxyZzlobDE2dTd0Nw==" target="_blank" rel="noopener noreferrer"
+                            class="bio-link" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Photo Card -->
+                <div class="bento-card bento-photo tilt-3d reveal-up delay-2">
+                    <img src="reference/profile.jpg.png" alt="Bhumit - Developer" class="bento-img" />
+                    <div class="photo-overlay">
+                        <span>Co-founder @ Pixel Forge Agency</span>
+                    </div>
+                </div>
+
+                <!-- Stats Card -->
+                <div class="bento-card bento-stat tilt-3d reveal-up delay-2">
+                    <span class="bento-num">4</span>
+                    <span class="bento-desc">Real-world projects shipped</span>
+                </div>
+
+                <!-- Live Status Card -->
+                <div class="bento-card bento-code-status reveal-up delay-3">
+                    <div class="bento-tag">Live Status</div>
+                    <div class="code-editor-mock">
+                        <div class="editor-header">
+                            <span class="editor-dot red"></span>
+                            <span class="editor-dot yellow"></span>
+                            <span class="editor-dot green"></span>
+                            <span class="editor-filename">dubvibe-pipeline.py</span>
+                        </div>
+                        <div class="editor-body">
+                            <code><span class="c-keyword">def</span> <span class="c-func">dub_video</span>(url):</code>
+                            <code>    translation = translate(url)</code>
+                            <code>    audio = text_to_speech(translation)</code>
+                            <code>    <span class="c-keyword">return</span> lip_sync(video, audio)</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spotify Card -->
+                <div class="bento-card bento-spotify reveal-up delay-1">
+                    <div class="spotify-header">
+                        <span class="spotify-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424c-.18.295-.565.387-.86.207-2.377-1.454-5.37-1.783-8.893-.982-.336.075-.668-.135-.744-.47-.076-.336.135-.668.47-.743 3.856-.88 7.15-.508 9.82 1.13.295.178.387.563.207.858zm1.225-2.72c-.227.367-.707.487-1.074.26-2.72-1.672-6.87-2.157-10.08-1.182-.413.125-.85-.107-.975-.52-.125-.413.107-.85.52-.975 3.66-1.11 8.24-.57 11.35 1.34.367.226.487.707.26 1.074zm.106-2.83C14.793 8.8 9.61 8.63 6.613 9.54c-.477.145-.98-.125-1.126-.6-.145-.477.125-.98.6-.1126 3.447-1.046 9.17-.85 12.8 1.305.43.255.57.81.315 1.24-.255.43-.81.57-1.24.315z"/></svg>
+                        </span>
+                        <span class="spotify-status">Currently Playing</span>
+                    </div>
+                    <div class="spotify-body">
+                        <div class="spotify-track">
+                            <span class="track-name">Lofi Coding Session</span>
+                            <span class="track-artist">ChilledCow</span>
+                        </div>
+                        <div class="spotify-waves">
+                            <span class="wave"></span>
+                            <span class="wave"></span>
+                            <span class="wave"></span>
+                            <span class="wave"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Stack Mini Card -->
+                <div class="bento-card bento-stack reveal-up delay-3">
+                    <div class="bento-tag">Current Stack</div>
+                    <div class="stack-pills">
+                        <span class="pill">Next.js 15</span>
+                        <span class="pill">React 19</span>
+                        <span class="pill">Python</span>
+                        <span class="pill">FastAPI</span>
+                        <span class="pill">Supabase</span>
+                        <span class="pill">Claude 4.5</span>
+                        <span class="pill">Gemini Pro</span>
+                        <span class="pill">TypeScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ===== WHAT I DO SECTION ===== -->
+    <section class="section section-dark" id="whatido">
+        <div class="container">
+            <div class="section-label reveal-up">02 — Domains</div>
+            <h2 class="section-title reveal-up delay-1">
+                Beyond just <span class="text-grad">coding.</span>
+            </h2>
+            <p class="section-sub reveal-up delay-2">The core disciplines where I build, lead, and ship — not interests,
+                active work.</p>
+
+            <div class="domains-grid">
+
+                <!-- Full Stack Development -->
+                <div class="domain-card tilt-3d reveal-up delay-1">
+                    <div class="domain-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <path d="M8 21h8M12 17v4" />
+                            <polyline points="7 9 12 14 17 9" />
+                        </svg>
+                    </div>
+                    <div class="domain-badge">Active</div>
+                    <h3 class="domain-title">Full Stack Development</h3>
+                    <p class="domain-desc">End-to-end web architectures — responsive interfaces on the frontend,
+                        intelligent APIs on the backend, and cloud databases tying it all together.</p>
+                    <div class="domain-tools">
+                        <span>Next.js</span><span>React</span><span>FastAPI</span><span>Supabase</span>
+                    </div>
+                </div>
+
+                <!-- Artificial Intelligence -->
+                <div class="domain-card tilt-3d reveal-up delay-2">
+                    <div class="domain-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20z" />
+                            <path d="M12 6v6l4 2" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                    </div>
+                    <div class="domain-badge">Exploring</div>
+                    <h3 class="domain-title">Artificial Intelligence</h3>
+                    <p class="domain-desc">Integrating large language models, custom voice recognition pipelines, and
+                        speech-to-text systems into production-grade applications that actually solve problems.</p>
+                    <div class="domain-tools">
+                        <span>Gemini Pro</span><span>Claude API</span><span>Whisper</span><span>Wav2Lip</span>
+                    </div>
+                </div>
+
+                <!-- UI/UX Design -->
+                <div class="domain-card tilt-3d reveal-up delay-3">
+                    <div class="domain-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="3" />
+                            <path d="M3 9h18M9 21V9" />
+                        </svg>
+                    </div>
+                    <div class="domain-badge">Active</div>
+                    <h3 class="domain-title">UI/UX Design</h3>
+                    <p class="domain-desc">Prototyping bespoke interfaces with responsive grids, scroll-driven
+                        animations, and pixel-precise layouts. Every interaction is intentional.</p>
+                    <div class="domain-tools">
+                        <span>Tailwind CSS</span><span>Figma</span><span>Animations</span><span>Responsive</span>
+                    </div>
+                </div>
+
+                <!-- Startup Building -->
+                <div class="domain-card tilt-3d reveal-up delay-1">
+                    <div class="domain-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                        </svg>
+                    </div>
+                    <div class="domain-badge">Active</div>
+                    <h3 class="domain-title">Startup Building</h3>
+                    <p class="domain-desc">Co-founding and leading Pixel Forge Agency — from defining the product
+                        roadmap and service offerings to shipping client projects and growing the brand.</p>
+                    <div class="domain-tools">
+                        <span>Pixel Forge</span><span>Product Strategy</span><span>Client
+                            Work</span><span>Leadership</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS SECTION ===== -->
+    <section class="section" id="skills">
+        <div class="container">
+            <div class="section-label reveal-up">03 — Skills</div>
+            <h2 class="section-title reveal-up delay-1">
+                Built with real tools.<br /><span class="text-grad">Not buzzwords.</span>
+            </h2>
+            <p class="section-sub reveal-up delay-2">Every skill listed here is something I've shipped with in a real
+                project — no padding.</p>
+
+            <!-- Skills Layout: 2 columns (Tags Left, Bars Right) -->
+            <div class="skills-layout-new">
+
+                <!-- LEFT: Tag cloud -->
+                <div class="skills-tags-col-new reveal-up delay-1">
+                    <div class="sk-tags-cloud-new">
+                        <span class="sk-tag-new">HTML5</span>
+                        <span class="sk-tag-new">CSS3</span>
+                        <span class="sk-tag-new">JAVASCRIPT</span>
+                        <span class="sk-tag-new">REACT</span>
+                        <span class="sk-tag-new">NEXT.JS</span>
+                        <span class="sk-tag-new">TAILWIND CSS</span>
+                        <span class="sk-tag-new">TYPESCRIPT</span>
+                        <span class="sk-tag-new">PYTHON</span>
+                        <span class="sk-tag-new">FASTAPI</span>
+                        <span class="sk-tag-new">NODE.JS</span>
+                        <span class="sk-tag-new">SUPABASE</span>
+                        <span class="sk-tag-new">POSTGRESQL</span>
+                        <span class="sk-tag-new">REST APIS</span>
+                        <span class="sk-tag-new">GEMINI PRO</span>
+                        <span class="sk-tag-new">CLAUDE API</span>
+                        <span class="sk-tag-new">OPENAI WHISPER</span>
+                        <span class="sk-tag-new">WAV2LIP</span>
+                        <span class="sk-tag-new">PROMPT ENGINEERING</span>
+                        <span class="sk-tag-new">NLP PIPELINES</span>
+                        <span class="sk-tag-new">GIT & GITHUB</span>
+                        <span class="sk-tag-new">UI/UX DESIGN</span>
+                        <span class="sk-tag-new">EMAILJS</span>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Skill bars -->
+                <div class="skills-bars-col-new reveal-up delay-2">
+
+                    <div class="sk-bar-item-new">
+                        <div class="sk-bar-label-new">Next.js & React</div>
+                        <div class="sk-track-new">
+                            <div class="sk-fill-new" data-width="95">
+                                <span class="sk-tooltip-new">95%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sk-bar-item-new">
+                        <div class="sk-bar-label-new">Python & FastAPI</div>
+                        <div class="sk-track-new">
+                            <div class="sk-fill-new" data-width="92">
+                                <span class="sk-tooltip-new">92%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sk-bar-item-new">
+                        <div class="sk-bar-label-new">AI & NLP Pipelines</div>
+                        <div class="sk-track-new">
+                            <div class="sk-fill-new" data-width="96">
+                                <span class="sk-tooltip-new">96%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sk-bar-item-new">
+                        <div class="sk-bar-label-new">UI/UX & Responsive Design</div>
+                        <div class="sk-track-new">
+                            <div class="sk-fill-new" data-width="98">
+                                <span class="sk-tooltip-new">98%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sk-bar-item-new">
+                        <div class="sk-bar-label-new">Supabase & PostgreSQL</div>
+                        <div class="sk-track-new">
+                            <div class="sk-fill-new" data-width="88">
+                                <span class="sk-tooltip-new">88%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sk-bar-item-new">
+                        <div class="sk-bar-label-new">Node.js & Express</div>
+                        <div class="sk-track-new">
+                            <div class="sk-fill-new" data-width="85">
+                                <span class="sk-tooltip-new">85%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS SECTION ===== -->
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section-label reveal-up">04 — Work</div>
+            <h2 class="section-title reveal-up delay-1">
+                Projects I've <span class="text-grad">shipped</span>
+            </h2>
+            <p class="section-sub reveal-up delay-2">Real-world applications built and deployed — every one of them
+                solves an actual problem.</p>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs reveal-up delay-2">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ai">AI / ML</button>
+                <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+            </div>
+
+            <!-- Flash Cards Grid -->
+            <div class="flash-cards" id="flashCards">
+
+                <!-- Vocaberry : Language Learning -->
+                <article class="flash-card reveal-up delay-1" data-category="fullstack">
+                    <div class="flash-card-inner">
+                        <div class="flash-card-front">
+                            <div class="fcard-img-wrap">
+                                <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=800&q=80"
+                                    alt="Vocaberry" class="fcard-img" />
+                                <div class="fcard-overlay">
+                                    <span class="fcard-category">Node.js / Firebase / HTML</span>
+                                </div>
+                            </div>
+                            <div class="fcard-body">
+                                <div class="fcard-number">Started: 2026</div>
+                                <h3 class="fcard-title">Vocaberry</h3>
+                                <p class="fcard-desc">An interactive language learning platform. AI-powered mnemonic flashcards to boost memory retention, with Firebase cloud sync.</p>
+                                <div class="fcard-tags">
+                                    <span class="fcard-tag">HTML/JS</span>
+                                    <span class="fcard-tag">Firebase</span>
+                                    <span class="fcard-tag">Node.js</span>
+                                    <span class="fcard-tag">AI Mnemonics</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flash-card-back">
+                            <div class="fcard-back-content">
+                                <h3>Vocaberry</h3>
+                                <div class="case-section">
+                                    <span class="case-label">Problem</span>
+                                    <p>Language learners struggle to retain vocabulary without spaced repetition and memory hooks.</p>
+                                </div>
+                                <div class="case-section">
+                                    <span class="case-label">Solution</span>
+                                    <p>Developed a memory trainer app that uses AI to generate custom mnemonics, combined with a Firebase backend to sync user progress.</p>
+                                </div>
+                                <div class="case-section">
+                                    <span class="case-label">Impact</span>
+                                    <p>Improved long-term vocabulary retention by transforming rote memorization into associative learning.</p>
+                                </div>
+                                <a href="#contact" class="fcard-back-btn">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- DubVibe Pro -->
+                <article class="flash-card reveal-up delay-1" data-category="ai">
+                    <div class="flash-card-inner">
+                        <div class="flash-card-front">
+                            <div class="fcard-img-wrap">
+                                <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80"
+                                    alt="DubVibe Pro" class="fcard-img" />
+                                <div class="fcard-overlay">
+                                    <span class="fcard-category">AI / Python / FastAPI</span>
+                                </div>
+                            </div>
+                            <div class="fcard-body">
+                                <div class="fcard-number">Started: 2026</div>
+                                <h3 class="fcard-title">DubVibe Pro</h3>
+                                <p class="fcard-desc">An automated video dubbing pipeline. Translates, dubs, and lip-syncs video content in 10+ languages using Gemini and Wav2Lip.</p>
+                                <div class="fcard-tags">
+                                    <span class="fcard-tag">Python</span>
+                                    <span class="fcard-tag">FastAPI</span>
+                                    <span class="fcard-tag">Gemini Pro</span>
+                                    <span class="fcard-tag">Whisper</span>
+                                    <span class="fcard-tag">Wav2Lip</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flash-card-back">
+                            <div class="fcard-back-content">
+                                <h3>DubVibe Pro</h3>
+                                <div class="case-section">
+                                    <span class="case-label">Problem</span>
+                                    <p>Content creators struggled to reach global audiences due to high costs and
+                                        unnatural quality of traditional dubbing.</p>
+                                </div>
+                                <div class="case-section">
+                                    <span class="case-label">Solution</span>
+                                    <p>Built an automated pipeline using Gemini 1.5 Pro for translation, OpenAI Whisper
+                                        for speech recognition, and Wav2Lip for lip-sync rendering.</p>
+                                </div>
+                                <div class="case-section">
+                                    <span class="case-label">Impact</span>
+                                    <p>Reduced dubbing cost by 90% with near-native quality output in 10+ languages.</p>
+                                </div>
+                                <a href="#contact" class="fcard-back-btn">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SkillBridge AI -->
+                <article class="flash-card reveal-up delay-2" data-category="fullstack ai">
+                    <div class="flash-card-inner">
+                        <div class="flash-card-front">
+                            <div class="fcard-img-wrap">
+                                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                                    alt="SkillBridge AI" class="fcard-img" />
+                                <div class="fcard-overlay">
+                                    <span class="fcard-category">Next.js / Supabase / Claude</span>
+                                </div>
+                            </div>
+                            <div class="fcard-body">
+                                <div class="fcard-number">Started: 2026</div>
+                                <h3 class="fcard-title">SkillBridge AI</h3>
+                                <p class="fcard-desc">AI-powered mock interviews and skill gap assessments. Runs real-time interviews using Claude Sonnet 4.5 and tracks user progress.</p>
+                                <div class="fcard-tags">
+                                    <span class="fcard-tag">Next.js 15</span>
+                                    <span class="fcard-tag">React 19</span>
+                                    <span class="fcard-tag">Supabase</span>
+                                    <span class="fcard-tag">Claude 4.5</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flash-card-back">
+                            <div class="fcard-back-content">
+                                <h3>SkillBridge AI</h3>
+                                <div class="case-section">
+                                    <span class="case-label">Problem</span>
+                                    <p>Young professionals lacked accessible tools for realistic interview preparation
+                                        and career skill gap identification.</p>
+                                </div>
+                                <div class="case-section">
+                                    <span class="case-label">Solution</span>
+                                    <p>Full-stack platform with real-time AI interviews powered by Claude Sonnet 4.5,
+                                        Supabase for persistent progress tracking, and dynamic skill assessments.</p>
+                                </div>
+                                <div class="case-section">
+                                    <span class="case-label">Impact</span>
+                                    <p>Personalized guidance that adapts to each user's unique career trajectory and
+                                        learning pace.</p>
+                                </div>
+                                <a href="#contact" class="fcard-back-btn">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Pixel Forge Agency -->
+                <article class="flash-card reveal-up delay-3" data-category="fullstack frontend">
+                    <div class="flash-card-inner">
+                        <div class="flash-card-front">
+                            <div class="fcard-img-wrap">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+                                    alt="Pixel Forge Agency" class="fcard-img" />
+                                <div class="fcard-overlay">
+                                    <span class="fcard-category">Full-Stack / Agency</span>
+                                </div>
+                            </div>
+                            <div class="fcard-body">
+                                <div class="fcard-number">Started: 2023</div>
+                                <h3 class="fcard-title">Pixel Forge Agency</h3>
+                                <p class="fcard-desc">A full-stack project portal co-founded in 2023. Handles client onboarding, service pipelines, and collaborative product delivery.</p>
+                                <div class="fcard-tags">
+                                    <span class="fcard-tag">React</span>
+                                    <span class="fcard-tag">Node.js</span>
+                                    <span class="fcard-tag">Custom Design</span>
+                                    <span class="fcard-tag">UI/UX</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flash-card-back">
+                            <div class="fcard-back-content">
+                                <h3>Pixel Forge Agency</h3>
+                                <div class="case-section">
+                                    <span class="case-label">Problem</span>
+                                    <p>Needed a flagship platform that demonstrates premium design capabilities while
+                                        handling real client workflows.</p>
+                                </div>
+                                <div class="case-section">
+                                    <span class="case-label">Solution</span>
+                                    <p>Built a bespoke agency website with a custom design system, animated UI
+                                        components, and integrated project management backend.</p>
+                                </div>
+                                <div class="case-section">
+                                    <span class="case-label">Impact</span>
+                                    <p>Serves as the primary business platform, driving client acquisition and
+                                        showcasing agency capabilities.</p>
+                                </div>
+                                <a href="#contact" class="fcard-back-btn">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Core Gym Platform -->
+                <article class="flash-card reveal-up delay-1" data-category="frontend">
+                    <div class="flash-card-inner">
+                        <div class="flash-card-front">
+                            <div class="fcard-img-wrap">
+                                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80"
+                                    alt="Core Gym Platform" class="fcard-img" />
+                                <div class="fcard-overlay">
+                                    <span class="fcard-category">Web Design / Frontend</span>
+                                </div>
+                            </div>
+                            <div class="fcard-body">
+                                <div class="fcard-number">Started: 2025</div>
+                                <h3 class="fcard-title">Core Gym Platform</h3>
+                                <p class="fcard-desc">A high-conversion frontend built for a local gym. Features scroll-driven interactions, booking flows, and premium typography grids.</p>
+                                <div class="fcard-tags">
+                                    <span class="fcard-tag">HTML5</span>
+                                    <span class="fcard-tag">CSS3</span>
+                                    <span class="fcard-tag">JavaScript</span>
+                                    <span class="fcard-tag">Responsive</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flash-card-back">
+                            <div class="fcard-back-content">
+                                <h3>Core Gym Platform</h3>
+                                <div class="case-section">
+                                    <span class="case-label">Problem</span>
+                                    <p>Gym needed a modern digital presence to attract and convert online visitors into
+                                        paying members.</p>
+                                </div>
+                                <div class="case-section">
+                                    <span class="case-label">Solution</span>
+                                    <p>Designed and built a visually striking, fully responsive website with scroll
+                                        animations, class booking flow, and high-impact CTAs.</p>
+                                </div>
+                                <div class="case-section">
+                                    <span class="case-label">Impact</span>
+                                    <p>Significantly improved online engagement and membership conversion rates
+                                        post-launch.</p>
+                                </div>
+                                <a href="#contact" class="fcard-back-btn">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- ===== EXPERIENCE SECTION ===== -->
+    <section class="section section-dark" id="experience">
+        <div class="container">
+            <div class="section-label reveal-up">05 — Experience</div>
+            <h2 class="section-title reveal-up delay-1">My <span class="text-grad">Journey</span></h2>
+
+            <div class="timeline">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-item reveal-up delay-1">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card tilt-3d">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Co-founder & Full Stack Developer</h3>
+                                <span class="timeline-company">Pixel Forge Agency</span>
+                            </div>
+                            <span class="timeline-date">2026 — Present</span>
+                        </div>
+                        <p>Co-founded and currently lead a digital agency delivering premium full-stack and
+                            AI-integrated web applications. Manage client relationships, architectural decisions, and a
+                            growing team of developers.</p>
+                        <div class="timeline-tags">
+                            <span>Next.js</span><span>Python</span><span>AI Integration</span><span>Team Lead</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-up delay-2">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card tilt-3d">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Freelancer (Self-Employed)</h3>
+                                <span class="timeline-company">Independent</span>
+                            </div>
+                            <span class="timeline-date">2026 — Present</span>
+                        </div>
+                        <p>Delivered complex web applications and AI tools for international clients. Specialized in
+                            React/Next.js frontends paired with Python FastAPI backends and automated pipelines.</p>
+                        <div class="timeline-tags">
+                            <span>Full-Stack</span><span>FastAPI</span><span>React</span><span>Supabase</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== CERTIFICATIONS SECTION ===== -->
+    <section class="section parallax-section" id="certifications">
+        <div class="container">
+            <div class="section-label reveal-up">06 — Certifications</div>
+            <h2 class="section-title reveal-up delay-1">Verified <span class="text-grad">Credentials</span></h2>
+            <p class="section-sub reveal-up delay-2">Real courses, real assessments. Every certificate represents hands-on skill acquired.</p>
+
+            <div class="certs-grid">
+
+                <!-- Certificate 1: Microsoft Learn Student Ambassador -->
+                <div class="cert-card tilt-3d reveal-up delay-1">
+                    <div class="cert-icon-wrap float-3d">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="7" height="7"/><rect x="15" y="3" width="7" height="7"/><rect x="15" y="14" width="7" height="7"/><rect x="2" y="14" width="7" height="7"/>
+                        </svg>
+                    </div>
+                    <div class="cert-body">
+                        <span class="cert-issuer">Microsoft Learn</span>
+                        <h3 class="cert-title">Student Ambassador — Event Coordinator</h3>
+                        <p class="cert-desc">Recognized for coordinating the "Getting Started with Postman" session as part of the Microsoft Learn Student Ambassador program. Awarded for support, hard work, and dedication in making the event run smoothly.</p>
+                        <div class="cert-meta">
+                            <span class="cert-tag">Microsoft</span>
+                            <span class="cert-tag">Community</span>
+                            <span class="cert-tag">Event Lead</span>
+                        </div>
+                    </div>
+                    <a href="certificates/Mr. Vasava Bhumit_certificate.pdf" target="_blank" rel="noopener noreferrer" class="cert-view-btn" aria-label="View Certificate">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            <polyline points="15 3 21 3 21 9"/>
+                            <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                        View
+                    </a>
+                </div>
+
+                <!-- Certificate 2: Cisco Networking Academy / Parul University - OS Basics -->
+                <div class="cert-card tilt-3d reveal-up delay-2">
+                    <div class="cert-icon-wrap float-3d">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <path d="M8 21h8M12 17v4"/>
+                        </svg>
+                    </div>
+                    <div class="cert-body">
+                        <span class="cert-issuer">Cisco Networking Academy · Parul University</span>
+                        <h3 class="cert-title">Operating Systems Basics</h3>
+                        <p class="cert-desc">Successfully completed "Operating Systems Basics" offered by the Faculty of Engineering and Technology, Parul University through the Cisco Networking Academy program. Completed: 04 Oct 2024.</p>
+                        <div class="cert-meta">
+                            <span class="cert-tag">Cisco</span>
+                            <span class="cert-tag">OS</span>
+                            <span class="cert-tag">Oct 2024</span>
+                        </div>
+                    </div>
+                    <a href="certificates/Operating_Systems_Basics_certificate_2303466200381-paruluniversity-ac-in_38d7c353-001b-4d50-806a-ef55acb4c809.pdf" target="_blank" rel="noopener noreferrer" class="cert-view-btn" aria-label="View Certificate">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            <polyline points="15 3 21 3 21 9"/>
+                            <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                        View
+                    </a>
+                </div>
+
+                <!-- Certificate 3: Google Student Ambassadors - Google AI Studio -->
+                <div class="cert-card tilt-3d reveal-up delay-3">
+                    <div class="cert-icon-wrap float-3d">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+                        </svg>
+                    </div>
+                    <div class="cert-body">
+                        <span class="cert-issuer">Google · Google Student Ambassadors</span>
+                        <h3 class="cert-title">Google AI Studio — Certificate of Participation</h3>
+                        <p class="cert-desc">Awarded for successfully participating in the "Getting Started with Google AI Studio" session organized by Google Student Ambassadors at Parul University Institute (PPI). Demonstrated enthusiasm, leadership, and commitment to fostering learning and innovation. Date: 19 Dec 2025.</p>
+                        <div class="cert-meta">
+                            <span class="cert-tag">Google AI</span>
+                            <span class="cert-tag">AI Studio</span>
+                            <span class="cert-tag">Dec 2025</span>
+                        </div>
+                    </div>
+                    <a href="certificates/VASAVA BHUMIT_Certificate.pdf" target="_blank" rel="noopener noreferrer" class="cert-view-btn" aria-label="View Certificate">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            <polyline points="15 3 21 3 21 9"/>
+                            <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                        View
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="contact-inner reveal-up">
+                <div class="contact-left">
+                    <div class="section-label">07 — Contact</div>
+                    <h2 class="section-title">Let's build something <span class="text-grad">incredible.</span></h2>
+                    <p class="contact-sub">Need a functional web application, a custom AI pipeline, or a solid database architecture? Let's build it together.</p>
+                    <div class="contact-info">
+                        <a href="mailto:vasavabhumit4@gmail.com" class="contact-info-row">
+                            <div class="contact-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                            </div>
+                            <span>vasavabhumit4@gmail.com</span>
+                        </a>
+                        <div class="contact-social">
+                            <a href="https://github.com/BOOM-08" target="_blank" rel="noopener noreferrer" class="social-pill">GitHub</a>
+                            <a href="https://www.linkedin.com/in/bhumit-vasava-24565b357?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                                target="_blank" rel="noopener noreferrer" class="social-pill">LinkedIn</a>
+                            <a href="https://www.instagram.com/08__boom?igsh=MWxyZzlobDE2dTd0Nw==" target="_blank" rel="noopener noreferrer"
+                                class="social-pill">Instagram</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form class="contact-form console-form" id="contactForm" novalidate>
+                        <!-- Honeypot anti-spam field -->
+                        <div style="display:none;">
+                            <label>Keep this field blank</label>
+                            <input type="text" name="_gotcha" id="_gotcha" tabindex="-1" autocomplete="off" />
+                        </div>
+                        <div class="form-group console-input-group">
+                            <div class="console-prompt">
+                                <span class="c-keyword">const</span> name <span class="c-operator">=</span>
+                            </div>
+                            <input type="text" id="name" name="name" placeholder='"Jane Smith"' required />
+                        </div>
+                        <div class="form-group console-input-group">
+                            <div class="console-prompt">
+                                <span class="c-keyword">const</span> email <span class="c-operator">=</span>
+                            </div>
+                            <input type="email" id="email" name="email" placeholder='"jane@company.com"' required />
+                        </div>
+                        <div class="form-group console-input-group">
+                            <div class="console-prompt">
+                                <span class="c-keyword">const</span> projectType <span class="c-operator">=</span>
+                            </div>
+                            <select id="project" name="project">
+                                <option value="">"Select service..."</option>
+                                <option value="fullstack">"Full-Stack App"</option>
+                                <option value="ai">"AI Integration"</option>
+                                <option value="frontend">"Frontend / UI"</option>
+                                <option value="agency">"Agency Collab"</option>
+                                <option value="other">"Other"</option>
+                            </select>
+                        </div>
+                        <div class="form-group console-input-group">
+                            <div class="console-prompt">
+                                <span class="c-keyword">const</span> message <span class="c-operator">=</span>
+                            </div>
+                            <textarea id="message" name="message" rows="3" placeholder='`Tell me about your project...`' required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit console-btn" id="submitBtn">
+                            <span>bhumit.sendContact();</span>
+                        </button>
+                        <div class="form-success" id="formSuccess">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Message sent! I'll be in touch soon.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <a href="#home" class="logo">
+                    <span class="logo-text">B</span>humit<span class="logo-dot">.</span>
+                </a>
+                <p class="footer-copy">&copy; 2026 Bhumit · Pixel Forge Agency. All rights reserved.</p>
+                <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 15l-6-6-6 6" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="assets/script.js"></script>
+</body>
+
+</html>

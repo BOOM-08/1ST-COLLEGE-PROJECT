@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../SKILL_BRIDGE_AI"
+		},
+		{
+			"path": "../../CORE GYM"
+		},
+		{
+			"path": "../../video_dubbing_ai"
+		},
+		{
+			"path": "../../../Users/BHUMIT/Downloads/PROJECT"
+		},
+		{
+			"path": "../../pixel_forge_agency_"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "portfolio1"
+	}
+}
