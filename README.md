@@ -1,4 +1,4 @@
-# BHUMIT-VASAVA-S-PORTFOLIO
+# BHUMIT-VASAVA-PORTFOLIO
 
 Modern, highly interactive 3D developer portfolio built with semantic HTML5, vanilla CSS, and JavaScript.
 
