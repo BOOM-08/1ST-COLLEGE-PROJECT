@@ -277,24 +277,32 @@ AI/ML:     NLP pipelines, Gemini API, Claude API, Wav2Lip`;
             }
         });
 
-        // Terminal Theme Toggle (Dark / Light)
+        // Terminal Theme Toggle (Uiverse Checkbox Switch)
         const termToggleBtn = document.getElementById('termThemeToggle');
         if (termToggleBtn) {
-            termToggleBtn.addEventListener('click', (e) => {
+            termToggleBtn.addEventListener('change', (e) => {
                 e.stopPropagation();
-                termWidget.classList.toggle('term-light-mode');
-                const isLight = termWidget.classList.contains('term-light-mode');
-                const icon = termToggleBtn.querySelector('.term-toggle-icon');
-                const text = termToggleBtn.querySelector('.term-toggle-text');
-                if (isLight) {
-                    if (icon) icon.textContent = '🌙';
-                    if (text) text.textContent = 'Dark';
+                if (termToggleBtn.checked) {
+                    termWidget.classList.add('term-light-mode');
                 } else {
-                    if (icon) icon.textContent = '☀️';
-                    if (text) text.textContent = 'Light';
+                    termWidget.classList.remove('term-light-mode');
                 }
             });
         }
+
+        // Quick Command Chips Click Handler
+        const quickChips = document.querySelectorAll('.term-chip');
+        quickChips.forEach(chip => {
+            chip.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const cmd = chip.getAttribute('data-cmd');
+                if (cmd) {
+                    termInput.value = cmd;
+                    const event = new KeyboardEvent('keydown', { key: 'Enter' });
+                    termInput.dispatchEvent(event);
+                }
+            });
+        });
     }
 
     /* ============================================================
