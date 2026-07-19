@@ -1831,8 +1831,8 @@ body:not(:hover) .cursor-ring { opacity: 0; }
 
 .code-console-light-form .console-input-group {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  align-items: flex-start;
+  gap: 12px;
   padding: 16px 20px;
   border-bottom: 1px solid #e2e8f0;
   font-family: monospace;
@@ -1851,6 +1851,11 @@ body:not(:hover) .cursor-ring { opacity: 0; }
   font-weight: 800;
   font-family: monospace;
   font-size: 14px;
+  min-width: 195px;
+  flex-shrink: 0;
+  display: flex;
+  gap: 4px;
+  line-height: 1.5;
 }
 
 .console-prompt .c-keyword { color: #c026d3; } /* Vivid Magenta */
@@ -1869,6 +1874,7 @@ body:not(:hover) .cursor-ring { opacity: 0; }
   font-size: 14px !important;
   font-weight: 600 !important;
   padding: 0 !important;
+  line-height: 1.5 !important;
   box-shadow: none !important;
   resize: none !important;
 }
