@@ -211,6 +211,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ============================================================
+       3.1. 1-CLICK COPY EMAIL HANDLER
+       ============================================================ */
+    const copyEmailBtn = document.getElementById('copyEmailBtn');
+    const copyEmailText = document.getElementById('copyEmailText');
+    if (copyEmailBtn && copyEmailText) {
+        copyEmailBtn.addEventListener('click', () => {
+            const email = 'vasavabhumit4@gmail.com';
+            navigator.clipboard.writeText(email).then(() => {
+                const originalText = copyEmailText.textContent;
+                copyEmailText.textContent = '✓ Copied to Clipboard!';
+                copyEmailBtn.style.borderColor = '#22c55e';
+                copyEmailBtn.style.color = '#16a34a';
+
+                setTimeout(() => {
+                    copyEmailText.textContent = originalText;
+                    copyEmailBtn.style.borderColor = '';
+                    copyEmailBtn.style.color = '';
+                }, 2500);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        });
+    }
+
+    /* ============================================================
        2.5. AI PIPELINE CODE TYPING ANIMATION
        ============================================================ */
     const codeEditorEl = document.getElementById('typingCodeEditor');
