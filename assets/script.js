@@ -276,6 +276,25 @@ AI/ML:     NLP pipelines, Gemini API, Claude API, Wav2Lip`;
                 termBody.scrollTop = termBody.scrollHeight;
             }
         });
+
+        // Terminal Theme Toggle (Dark / Light)
+        const termToggleBtn = document.getElementById('termThemeToggle');
+        if (termToggleBtn) {
+            termToggleBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                termWidget.classList.toggle('term-light-mode');
+                const isLight = termWidget.classList.contains('term-light-mode');
+                const icon = termToggleBtn.querySelector('.term-toggle-icon');
+                const text = termToggleBtn.querySelector('.term-toggle-text');
+                if (isLight) {
+                    if (icon) icon.textContent = '🌙';
+                    if (text) text.textContent = 'Dark';
+                } else {
+                    if (icon) icon.textContent = '☀️';
+                    if (text) text.textContent = 'Light';
+                }
+            });
+        }
     }
 
     /* ============================================================
