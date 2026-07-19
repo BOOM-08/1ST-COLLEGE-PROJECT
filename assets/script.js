@@ -273,6 +273,26 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(typeNextLine, 1200);
     }
 
+    // Copy Snippet Button Handler
+    const copySnippetBtn = document.getElementById('copySnippetBtn');
+    const copySnippetText = document.getElementById('copySnippetText');
+    if (copySnippetBtn && copySnippetText) {
+        copySnippetBtn.addEventListener('click', () => {
+            const code = `async def dub_video(url, lang):\n    subtitles = await whisper.transcribe(url)\n    translated = await gemini.translate(subtitles, lang)\n    audio = await tts.synthesize(translated)\n    return await wav2lip.sync(video, audio)`;
+            navigator.clipboard.writeText(code).then(() => {
+                copySnippetText.textContent = '✓ Copied!';
+                copySnippetBtn.style.background = '#22c55e';
+                copySnippetBtn.style.color = '#ffffff';
+
+                setTimeout(() => {
+                    copySnippetText.textContent = 'Copy';
+                    copySnippetBtn.style.background = '';
+                    copySnippetBtn.style.color = '';
+                }, 2000);
+            }).catch(err => console.error(err));
+        });
+    }
+
     /* ============================================================
        3.5. INTERACTIVE TERMINAL CLI LOGIC
        ============================================================ */
