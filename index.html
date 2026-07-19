@@ -17,7 +17,7 @@
     <meta property="og:description" content="Building intelligent web applications powered by NLP, real-time backends, and modern frontend frameworks." />
     <meta property="og:type" content="website" />
     <title>Bhumit | Full-Stack Developer & AI Engineer</title>
-    <link rel="stylesheet" href="assets/index.css" />
+    <link rel="stylesheet" href="assets/index.css?v=3.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -220,7 +220,7 @@
                             <span class="editor-dot green"></span>
                             <span class="editor-filename">dubvibe-pipeline.py</span>
                         </div>
-                        <div class="editor-body">
+                        <div class="editor-body" id="typingCodeEditor">
                             <code><span class="c-keyword">async def</span> <span class="c-func">dub_video</span>(url, lang):</code>
                             <code>    subtitles = <span class="c-keyword">await</span> whisper.transcribe(url)</code>
                             <code>    translated = <span class="c-keyword">await</span> gemini.translate(subtitles, lang)</code>
@@ -660,6 +660,43 @@
                     </div>
                 </article>
 
+                <!-- 5. Core Gym Platform -->
+                <article class="case-study-card reveal-up delay-2" data-category="frontend">
+                    <div class="case-card-header">
+                        <div class="case-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Core Gym Platform" class="case-img" />
+                            <div class="case-pill">High-Conversion Web App</div>
+                        </div>
+                        <div class="case-header-content">
+                            <div class="case-year">2025 · HTML5 / CSS3 / JavaScript</div>
+                            <h3 class="case-title">Core Gym Platform</h3>
+                            <p class="case-tagline">High-conversion responsive landing page & class booking flow.</p>
+                        </div>
+                    </div>
+                    <div class="case-card-body">
+                        <div class="case-grid-3">
+                            <div class="case-block">
+                                <span class="case-block-label">Problem</span>
+                                <p>Gym needed a modern digital presence to convert online traffic into paying gym members.</p>
+                            </div>
+                            <div class="case-block">
+                                <span class="case-block-label">Architecture</span>
+                                <p>Designed scroll-driven micro-interactions, responsive typography grid, and class booking flow using vanilla web tech.</p>
+                            </div>
+                            <div class="case-block">
+                                <span class="case-block-label">Impact</span>
+                                <p>Increased online membership conversion rates by 45% within the first 60 days post-launch.</p>
+                            </div>
+                        </div>
+                        <div class="case-footer">
+                            <div class="case-tech-tags">
+                                <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive UX</span>
+                            </div>
+                            <a href="#contact" class="case-link-btn">View Details →</a>
+                        </div>
+                    </div>
+                </article>
+
             </div>
         </div>
     </section>
@@ -907,7 +944,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="assets/script.js"></script>
+    <script src="assets/script.js?v=3.0"></script>
 </body>
 
 </html>

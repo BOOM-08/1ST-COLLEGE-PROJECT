@@ -211,6 +211,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ============================================================
+       2.5. AI PIPELINE CODE TYPING ANIMATION
+       ============================================================ */
+    const codeEditorEl = document.getElementById('typingCodeEditor');
+    if (codeEditorEl) {
+        const lines = [
+            '<span class="c-keyword">async def</span> <span class="c-func">dub_video</span>(url, lang):',
+            '    subtitles = <span class="c-keyword">await</span> whisper.transcribe(url)',
+            '    translated = <span class="c-keyword">await</span> gemini.translate(subtitles, lang)',
+            '    audio = <span class="c-keyword">await</span> tts.synthesize(translated)',
+            '    <span class="c-keyword">return</span> <span class="c-keyword">await</span> wav2lip.sync(video, audio)'
+        ];
+
+        let lineIdx = 0;
+        codeEditorEl.innerHTML = '';
+
+        function typeNextLine() {
+            if (lineIdx < lines.length) {
+                const codeLine = document.createElement('code');
+                codeLine.style.opacity = '0';
+                codeLine.style.transform = 'translateX(-8px)';
+                codeLine.style.transition = 'all 0.4s ease';
+                codeLine.innerHTML = lines[lineIdx];
+                codeEditorEl.appendChild(codeLine);
+
+                setTimeout(() => {
+                    codeLine.style.opacity = '1';
+                    codeLine.style.transform = 'translateX(0)';
+                }, 50);
+
+                lineIdx++;
+                setTimeout(typeNextLine, 500);
+            }
+        }
+
+        setTimeout(typeNextLine, 1200);
+    }
+
+    /* ============================================================
        3.5. INTERACTIVE TERMINAL CLI LOGIC
        ============================================================ */
     const termInput = document.getElementById('terminalInput');
