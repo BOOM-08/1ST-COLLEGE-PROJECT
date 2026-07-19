@@ -1785,47 +1785,88 @@ body:not(:hover) .cursor-ring { opacity: 0; }
   background: rgba(79, 70, 229, 0.06);
 }
 
-/* Contact Form — IDE Terminal Theme */
-.contact-form {
-  background: #090d16;
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: var(--radius-xl);
-  padding: var(--sp-8);
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-5);
-  box-shadow: 0 20px 50px rgba(9, 13, 22, 0.25);
-}
-
-.console-form {
-  background: #090d16 !important;
-  border: 1px solid rgba(255,255,255,0.06) !important;
-  backdrop-filter: blur(10px) !important;
+/* Modern Tech Light Contact Form */
+.modern-tech-form {
+  background: #ffffff !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-xl) !important;
   padding: var(--sp-8) !important;
   display: flex;
   flex-direction: column;
-  gap: var(--sp-6) !important;
+  gap: var(--sp-5) !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 12px -2px rgba(0, 0, 0, 0.03) !important;
 }
 
-.console-input-group {
+.modern-tech-form .form-group {
   display: flex;
-  align-items: center;
-  gap: var(--sp-2) !important;
-  border-bottom: 1px solid rgba(255,255,255,0.08) !important;
-  padding-bottom: var(--sp-2) !important;
-  font-family: monospace;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modern-tech-form .form-label {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--text-1);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.modern-tech-form .form-input {
+  background: var(--bg-1) !important;
+  border: 1.5px solid var(--border) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 0.8rem 1rem !important;
   font-size: var(--text-sm) !important;
-  background: transparent !important;
-  border-radius: 0 !important;
-  flex-direction: row !important;
+  color: var(--text-1) !important;
+  font-family: var(--font-body) !important;
+  transition: all 0.2s ease !important;
+  outline: none !important;
+  width: 100%;
 }
 
-.console-prompt {
-  white-space: nowrap;
-  font-weight: 600;
-  color: #64748b;
-  display: flex;
-  gap: var(--sp-1);
+.modern-tech-form .form-input::placeholder {
+  color: var(--text-3) !important;
+}
+
+.modern-tech-form .form-input:focus {
+  border-color: var(--accent) !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12) !important;
+}
+
+.modern-tech-form .form-select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%234f46e5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 1rem center !important;
+  padding-right: 2.5rem !important;
+}
+
+.modern-tech-form .tech-submit-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 0.9rem 2rem !important;
+  background: var(--grad-primary) !important;
+  border: none !important;
+  border-radius: var(--radius-full) !important;
+  font-family: var(--font-display) !important;
+  font-weight: 700 !important;
+  font-size: var(--text-sm) !important;
+  color: #ffffff !important;
+  transition: all 0.3s var(--ease-out) !important;
+  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.3) !important;
+  cursor: pointer !important;
+  width: 100% !important;
+}
+
+.modern-tech-form .tech-submit-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 30px rgba(79, 70, 229, 0.45) !important;
 }
 
 .console-prompt .c-keyword { color: #f472b6; }

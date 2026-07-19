@@ -17,7 +17,7 @@
     <meta property="og:description" content="Building intelligent web applications powered by NLP, real-time backends, and modern frontend frameworks." />
     <meta property="og:type" content="website" />
     <title>Bhumit | Full-Stack Developer & AI Engineer</title>
-    <link rel="stylesheet" href="assets/index.css?v=3.0" />
+    <link rel="stylesheet" href="assets/index.css?v=4.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -874,51 +874,47 @@
                     </div>
                 </div>
                 <div class="contact-right">
-                    <form class="contact-form console-form" id="contactForm" novalidate>
+                    <form class="contact-form modern-tech-form" id="contactForm" novalidate>
                         <!-- Honeypot anti-spam field -->
                         <div style="display:none;">
                             <label>Keep this field blank</label>
                             <input type="text" name="_gotcha" id="_gotcha" tabindex="-1" autocomplete="off" />
                         </div>
-                        <div class="form-group console-input-group">
-                            <div class="console-prompt">
-                                <span class="c-keyword">const</span> name <span class="c-operator">=</span>
-                            </div>
-                            <input type="text" id="name" name="name" placeholder='"Jane Smith"' required />
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="e.g. Jane Smith" required />
                         </div>
-                        <div class="form-group console-input-group">
-                            <div class="console-prompt">
-                                <span class="c-keyword">const</span> email <span class="c-operator">=</span>
-                            </div>
-                            <input type="email" id="email" name="email" placeholder='"jane@company.com"' required />
+                        <div class="form-group">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="e.g. jane@company.com" required />
                         </div>
-                        <div class="form-group console-input-group">
-                            <div class="console-prompt">
-                                <span class="c-keyword">const</span> projectType <span class="c-operator">=</span>
-                            </div>
-                            <select id="project" name="project">
-                                <option value="">"Select service..."</option>
-                                <option value="fullstack">"Full-Stack App"</option>
-                                <option value="ai">"AI Integration"</option>
-                                <option value="frontend">"Frontend / UI"</option>
-                                <option value="agency">"Agency Collab"</option>
-                                <option value="other">"Other"</option>
+                        <div class="form-group">
+                            <label for="project" class="form-label">Service / Project Interest</label>
+                            <select id="project" name="project" class="form-input form-select">
+                                <option value="">Select service...</option>
+                                <option value="fullstack">Full-Stack Web App</option>
+                                <option value="ai">AI Integration & Speech Pipeline</option>
+                                <option value="frontend">Frontend / UI Architecture</option>
+                                <option value="agency">Pixel Forge Agency Collaboration</option>
+                                <option value="other">Other Inquiry</option>
                             </select>
                         </div>
-                        <div class="form-group console-input-group">
-                            <div class="console-prompt">
-                                <span class="c-keyword">const</span> message <span class="c-operator">=</span>
-                            </div>
-                            <textarea id="message" name="message" rows="3" placeholder='`Tell me about your project...`' required></textarea>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Project Details</label>
+                            <textarea id="message" name="message" class="form-input form-textarea" rows="4" placeholder="Tell me about your project goals, scope, or timeline..." required></textarea>
                         </div>
-                        <button type="submit" class="btn-submit console-btn" id="submitBtn">
-                            <span>bhumit.sendContact();</span>
+                        <button type="submit" class="btn-submit tech-submit-btn" id="submitBtn">
+                            <span>Send Message</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
                         </button>
                         <div class="form-success" id="formSuccess">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12" />
                             </svg>
-                            Message sent! I'll be in touch soon.
+                            Message sent! I'll get back to you within 24 hours.
                         </div>
                     </form>
                 </div>
@@ -944,7 +940,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="assets/script.js?v=3.0"></script>
+    <script src="assets/script.js?v=4.0"></script>
 </body>
 
 </html>
