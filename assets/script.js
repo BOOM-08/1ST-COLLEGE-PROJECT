@@ -735,4 +735,271 @@ AI/ML:     NLP pipelines, Gemini API, Claude API, Wav2Lip`;
         });
     });
 
+    /* ============================================================
+       17. SPOTLIGHT MOUSE TRACKER (LINEAR & STRIPE STYLE)
+       ============================================================ */
+    document.querySelectorAll('.bento-card, .matrix-card, .domain-card, .case-study-card, .cert-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+
+    /* ============================================================
+       18. GLOBAL COMMAND PALETTE ENGINE (CTRL + K / ⌘K)
+       ============================================================ */
+    const cmdPaletteBackdrop = document.getElementById('cmdPaletteBackdrop');
+    const cmdPaletteInput = document.getElementById('cmdPaletteInput');
+    const cmdPaletteResults = document.getElementById('cmdPaletteResults');
+    const cmdKTrigger = document.getElementById('cmdKTrigger');
+
+    function openCmdPalette() {
+        if (!cmdPaletteBackdrop) return;
+        cmdPaletteBackdrop.classList.add('active');
+        cmdPaletteBackdrop.setAttribute('aria-hidden', 'false');
+        if (cmdPaletteInput) {
+            cmdPaletteInput.value = '';
+            setTimeout(() => cmdPaletteInput.focus(), 50);
+        }
+        filterCmdItems('');
+    }
+
+    function closeCmdPalette() {
+        if (!cmdPaletteBackdrop) return;
+        cmdPaletteBackdrop.classList.remove('active');
+        cmdPaletteBackdrop.setAttribute('aria-hidden', 'true');
+    }
+
+    if (cmdKTrigger) {
+        cmdKTrigger.addEventListener('click', openCmdPalette);
+    }
+
+    // Global Key Listener (Ctrl+K / Cmd+K / Esc)
+    document.addEventListener('keydown', e => {
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+            e.preventDefault();
+            if (cmdPaletteBackdrop && cmdPaletteBackdrop.classList.contains('active')) {
+                closeCmdPalette();
+            } else {
+                openCmdPalette();
+            }
+        }
+        if (e.key === 'Escape' && cmdPaletteBackdrop && cmdPaletteBackdrop.classList.contains('active')) {
+            closeCmdPalette();
+        }
+    });
+
+    // Close on backdrop click
+    if (cmdPaletteBackdrop) {
+        cmdPaletteBackdrop.addEventListener('click', e => {
+            if (e.target === cmdPaletteBackdrop) closeCmdPalette();
+        });
+    }
+
+    // Filter Command Items
+    function filterCmdItems(query) {
+        if (!cmdPaletteResults) return;
+        const items = cmdPaletteResults.querySelectorAll('.cmd-item');
+        const q = query.toLowerCase().trim();
+
+        items.forEach(item => {
+            const label = item.querySelector('.cmd-item-label').textContent.toLowerCase();
+            if (label.includes(q)) {
+                item.style.display = 'flex';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        // Maintain active item
+        const visibleItems = Array.from(items).filter(el => el.style.display !== 'none');
+        items.forEach(el => el.classList.remove('active'));
+        if (visibleItems.length > 0) visibleItems[0].classList.add('active');
+    }
+
+    if (cmdPaletteInput) {
+        cmdPaletteInput.addEventListener('input', e => filterCmdItems(e.target.value));
+    }
+
+    // Command Item Click Action Execution
+    if (cmdPaletteResults) {
+        cmdPaletteResults.querySelectorAll('.cmd-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const action = item.getAttribute('data-action');
+                const target = item.getAttribute('data-target');
+
+                closeCmdPalette();
+
+                if (action === 'nav' && target) {
+                    const targetEl = document.querySelector(target);
+                    if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
+                } else if (action === 'copy-email') {
+                    const copyBtn = document.getElementById('copyEmailBtn');
+                    if (copyBtn) copyBtn.click();
+                } else if (action === 'download-resume') {
+                    const link = document.createElement('a');
+                    link.href = 'reference/BHUMIT VASAVA  (2).pdf';
+                    link.download = 'Bhumit_Vasava_Resume.pdf';
+                    link.click();
+                } else if (action === 'toggle-cli-mode') {
+                    const toggleSwitch = document.getElementById('uiverseThemeSwitch');
+                    if (toggleSwitch) toggleSwitch.click();
+                }
+            });
+        });
+    }
+
+    /* ============================================================
+       19. PROJECT DEEP-DIVE DRAWER MODAL
+       ============================================================ */
+    const projectDrawerBackdrop = document.getElementById('projectDrawerBackdrop');
+    const projectDrawerClose = document.getElementById('projectDrawerClose');
+    const drawerCategory = document.getElementById('drawerCategory');
+    const drawerTitle = document.getElementById('drawerTitle');
+    const drawerTagline = document.getElementById('drawerTagline');
+    const drawerBody = document.getElementById('drawerBody');
+
+    const projectData = {
+        'dubvibe': {
+            category: 'AI & SPEECH PIPELINE',
+            title: 'DubVibe Pro',
+            tagline: 'Automated Multilingual Voice & Lip-Sync Pipeline',
+            pipeline: ['1. Video Input & Audio Extraction', '2. OpenAI Whisper Speech-to-Text Transcribe', '3. Gemini Pro Contextual Neural Translation', '4. Voice Synthesis & Wav2Lip Model Lip-Syncing'],
+            problem: 'Content creators pay thousands of dollars for manual video localization.',
+            solution: 'Engineered an asynchronous Python pipeline reducing dubbing costs by 90% with sub-minute turnaround.',
+            links: { demo: 'https://github.com/BOOM-08', code: 'https://github.com/BOOM-08' }
+        },
+        'skillbridge': {
+            category: 'FULL-STACK AI APPLICATION',
+            title: 'SkillBridge AI',
+            tagline: 'Next.js 15 & Claude 4.5 Tech Interview Simulator',
+            pipeline: ['1. Role & Tech Stack Selection', '2. Dynamic Prompt Generation via Claude Sonnet', '3. Real-Time Voice Speech Evaluation', '4. Automated Code Feedback Report'],
+            problem: 'Job seekers lack realistic technical interview practice with instant feedback.',
+            solution: 'Built a responsive interview app powered by Next.js 15 App Router and Claude Sonnet API.',
+            links: { demo: 'https://github.com/BOOM-08', code: 'https://github.com/BOOM-08' }
+        },
+        'pixelforge': {
+            category: 'CO-FOUNDED AGENCY PLATFORM',
+            title: 'Pixel Forge Agency',
+            tagline: 'High-Converting Agency Portal & Client Hub',
+            pipeline: ['1. Next.js SSR & Supabase DB', '2. Custom Glassmorphism UI Components', '3. Dynamic Proposal Generator', '4. Real-Time Client Analytics Dashboard'],
+            problem: 'Agencies require high performance and fast turnaround to convert web traffic.',
+            solution: 'Co-founded agency platform delivering 45% average conversion lift for clients.',
+            links: { demo: 'https://github.com/BOOM-08', code: 'https://github.com/BOOM-08' }
+        },
+        'vocaberry': {
+            category: 'AI LANGUAGE LEARNING',
+            title: 'Vocaberry',
+            tagline: 'AI Mnemonic Visual Vocabulary Trainer',
+            pipeline: ['1. Target Word Selection', '2. Mnemonic Generation Algorithm', '3. Flashcard Spaced Repetition', '4. Progress Streak Tracking'],
+            problem: 'Traditional vocabulary learning relies on boring rote repetition.',
+            solution: 'Created an associative AI visual mnemonic app boosting retention rates by 65%.',
+            links: { demo: 'https://github.com/BOOM-08', code: 'https://github.com/BOOM-08' }
+        },
+        'coregym': {
+            category: 'HIGH-CONVERSION WEB APP',
+            title: 'Core Gym Platform',
+            tagline: 'Responsive Fitness Platform & Class Booking',
+            pipeline: ['1. HTML5/CSS3 Responsive Layout', '2. Vanilla JS Scroll Interactions', '3. Class Schedule Booking Flow', '4. Fast Vercel CDN Delivery'],
+            problem: 'Local gyms lose online membership sales due to sluggish websites.',
+            solution: 'Shipped a fast vanilla web app boosting online membership signups by 45%.',
+            links: { demo: 'https://github.com/BOOM-08', code: 'https://github.com/BOOM-08' }
+        }
+    };
+
+    function openProjectDrawer(key) {
+        const data = projectData[key] || projectData['dubvibe'];
+        if (drawerCategory) drawerCategory.textContent = data.category;
+        if (drawerTitle) drawerTitle.textContent = data.title;
+        if (drawerTagline) drawerTagline.textContent = data.tagline;
+
+        if (drawerBody) {
+            drawerBody.innerHTML = `
+                <div>
+                    <h4 class="drawer-section-title">ENGINEERING PIPELINE FLOW</h4>
+                    <div class="drawer-pipeline-flow">
+                        ${data.pipeline.map(step => `<div class="pipeline-step"><span class="step-num">⚡</span> ${step}</div>`).join('')}
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="drawer-section-title">THE PROBLEM</h4>
+                    <p style="font-size: 14px; color: var(--text-2); line-height: 1.6;">${data.problem}</p>
+                </div>
+
+                <div>
+                    <h4 class="drawer-section-title">ENGINEERING SOLUTION</h4>
+                    <p style="font-size: 14px; color: var(--text-2); line-height: 1.6;">${data.solution}</p>
+                </div>
+
+                <div class="drawer-links-group">
+                    <a href="${data.links.demo}" target="_blank" rel="noopener noreferrer" class="drawer-btn drawer-btn-primary">
+                        View GitHub Repo ↗
+                    </a>
+                    <a href="#contact" id="drawerContactLink" class="drawer-btn drawer-btn-secondary">
+                        Inquire About Project →
+                    </a>
+                </div>
+            `;
+            const contactBtn = drawerBody.querySelector('#drawerContactLink');
+            if (contactBtn) {
+                contactBtn.addEventListener('click', () => closeProjectDrawer());
+            }
+        }
+
+        if (projectDrawerBackdrop) {
+            projectDrawerBackdrop.classList.add('active');
+            projectDrawerBackdrop.setAttribute('aria-hidden', 'false');
+        }
+    }
+
+    function closeProjectDrawer() {
+        if (projectDrawerBackdrop) {
+            projectDrawerBackdrop.classList.remove('active');
+            projectDrawerBackdrop.setAttribute('aria-hidden', 'true');
+        }
+    }
+
+    if (projectDrawerClose) projectDrawerClose.addEventListener('click', closeProjectDrawer);
+    if (projectDrawerBackdrop) {
+        projectDrawerBackdrop.addEventListener('click', e => {
+            if (e.target === projectDrawerBackdrop) closeProjectDrawer();
+        });
+    }
+
+    // Attach click handlers to project buttons
+    document.querySelectorAll('.case-study-card').forEach((card, index) => {
+        const btn = card.querySelector('.case-link-btn');
+        const keys = ['dubvibe', 'skillbridge', 'pixelforge', 'vocaberry', 'coregym'];
+        if (btn) {
+            btn.addEventListener('click', e => {
+                e.preventDefault();
+                openProjectDrawer(keys[index] || 'dubvibe');
+            });
+        }
+    });
+
+    /* ============================================================
+       20. LIVE API SERVER LOG STREAM FOR CONTACT CONSOLE
+       ============================================================ */
+    const contactFormEl = document.getElementById('contactForm');
+    if (contactFormEl) {
+        contactFormEl.addEventListener('submit', () => {
+            const liveLog = document.createElement('div');
+            liveLog.className = 'live-console-stream';
+            liveLog.innerHTML = `
+                <div><span style="color:#c026d3;">[POST]</span> /api/v1/contact <span style="color:#38bdf8;">⚡ 118ms</span></div>
+                <div>Status: <span style="color:#22c55e;">HTTP 200 OK</span> (Payload Processed)</div>
+                <div>Destination: <span style="color:#eab308;">vasavabhumit4@gmail.com</span></div>
+            `;
+            const submitBtnEl = document.getElementById('submitBtn');
+            if (submitBtnEl && submitBtnEl.parentNode) {
+                submitBtnEl.parentNode.insertBefore(liveLog, submitBtnEl.nextSibling);
+            }
+        });
+    }
+
 });
