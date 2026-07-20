@@ -151,7 +151,7 @@ input, textarea, select { font-family: inherit; }
 .cursor-ring {
   position: fixed;
   pointer-events: none;
-  z-index: 9998;
+  z-index: 100000;
   transition-property: transform;
   transition-timing-function: var(--ease-out);
 }

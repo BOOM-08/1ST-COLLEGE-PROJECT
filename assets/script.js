@@ -948,6 +948,23 @@ AI/ML:     NLP pipelines, Gemini API, Claude API, Wav2Lip`;
             if (contactBtn) {
                 contactBtn.addEventListener('click', () => closeProjectDrawer());
             }
+
+            // Attach magnetic hover listeners to drawer buttons
+            const ringEl = document.getElementById('cursorRing');
+            if (ringEl) {
+                drawerBody.querySelectorAll('.drawer-btn, .project-drawer-close').forEach(el => {
+                    el.addEventListener('mouseenter', () => {
+                        ringEl.style.width = '50px';
+                        ringEl.style.height = '50px';
+                        ringEl.style.borderColor = 'rgba(79, 70, 229, 0.8)';
+                    });
+                    el.addEventListener('mouseleave', () => {
+                        ringEl.style.width = '36px';
+                        ringEl.style.height = '36px';
+                        ringEl.style.borderColor = 'rgba(79, 70, 229, 0.5)';
+                    });
+                });
+            }
         }
 
         if (projectDrawerBackdrop) {
