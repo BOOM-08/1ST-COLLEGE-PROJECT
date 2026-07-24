@@ -3,21 +3,35 @@
 
 <head>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KKLXK963');</script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KKLXK963');</script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
         content="Bhumit — Full-Stack Developer & AI Engineer. Building intelligent web applications powered by NLP, speech models, real-time backends, and modern frontend frameworks." />
     <meta property="og:title" content="Bhumit | Full-Stack Developer & AI Engineer" />
-    <meta property="og:description" content="Building intelligent web applications powered by NLP, real-time backends, and modern frontend frameworks." />
+    <meta property="og:description"
+        content="Building intelligent web applications powered by NLP, real-time backends, and modern frontend frameworks." />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content="reference/screen.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bhumit | Full-Stack Developer & AI Engineer" />
+    <meta name="twitter:description" content="Building intelligent web applications powered by NLP, speech models, real-time backends, and modern frontend frameworks." />
+    <meta name="twitter:image" content="reference/screen.png" />
+    <link rel="icon" type="image/svg+xml" href="assets/bhumit-logo.svg?v=5" />
+    <!-- Security Headers / CSP -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
     <title>Bhumit | Full-Stack Developer & AI Engineer</title>
-    <link rel="stylesheet" href="assets/index.css?v=16.0" />
+    <link rel="stylesheet" href="assets/index.css?v=7.5" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,9 +41,14 @@
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKLXK963"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKLXK963" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+
+    <!-- System Boot Sequence -->
+    <div id="bootSequence" class="boot-sequence">
+        <div class="boot-terminal" id="bootTerminal"></div>
+    </div>
 
     <!-- Custom Cursor -->
     <div class="cursor-dot" id="cursorDot"></div>
@@ -41,8 +60,8 @@
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar" id="navbar">
         <div class="nav-inner">
-            <a href="#home" class="logo">
-                <span class="logo-text">B</span>humit<span class="logo-dot">.</span>
+            <a href="#home" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="assets/bhumit-logo.svg?v=5" alt="Bhumit Logo" style="height: 28px; display: block;" />
             </a>
             <div class="nav-links" id="navLinks">
                 <a href="#about" class="nav-link" data-text="About">About</a>
@@ -58,11 +77,22 @@
                     <span class="cmd-k-icon">⌘K</span>
                     <span class="cmd-k-label">Quick Launch</span>
                 </button>
-                <a href="#contact" class="btn-hire">
-                    <span class="btn-hire-dot"></span>
-                    Hire Me
+                <a href="#contact" class="btn-hire" aria-label="Hire Me / Contact">
+                    <span class="btn-hire-status" title="Available for work">
+                        <span class="btn-hire-pulse"></span>
+                        <span class="btn-hire-dot"></span>
+                    </span>
+                    <svg class="btn-hire-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 2L11 13"></path>
+                        <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
+                    </svg>
+                    <span class="btn-hire-text">Hire Me</span>
+                    <svg class="btn-hire-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
                 </a>
-                <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                <button class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false" aria-controls="mobileMenu">
                     <span></span><span></span><span></span>
                 </button>
             </div>
@@ -94,23 +124,7 @@
                     <span id="typewriter-subtitle" style="font-weight: 700; color: var(--text-1);"></span>
                 </p>
 
-                <!-- Hero Proof Metrics Bar -->
-                <div class="hero-proof-bar reveal-up delay-3">
-                    <div class="proof-metric-item">
-                        <span class="proof-num">10+</span>
-                        <span class="proof-desc">Projects Shipped</span>
-                    </div>
-                    <div class="proof-divider"></div>
-                    <div class="proof-metric-item">
-                        <span class="proof-num">90%</span>
-                        <span class="proof-desc">Dubbing Cost Cut</span>
-                    </div>
-                    <div class="proof-divider"></div>
-                    <div class="proof-metric-item">
-                        <span class="proof-num">45%</span>
-                        <span class="proof-desc">Conversion Lift</span>
-                    </div>
-                </div>
+                <!-- Hero Proof Metrics Bar removed as requested -->
 
                 <!-- Hero Action Buttons & 1-Click Copy Email Pill -->
                 <div class="hero-cta-group reveal-up delay-3">
@@ -119,18 +133,21 @@
                     </a>
 
                     <button class="btn-hero-copy-email" id="copyEmailBtn" title="Click to copy email">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                         </svg>
                         <span id="copyEmailText">vasavabhumit4@gmail.com</span>
                     </button>
 
-                    <a href="reference/BHUMIT VASAVA  (2).pdf" download="Bhumit_Vasava_Resume.pdf" class="btn-hero-resume">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                            <polyline points="7 10 12 15 17 10"/>
-                            <line x1="12" y1="15" x2="12" y2="3"/>
+                    <a href="reference/Bhumit_Vasava_Resume.pdf" download="Bhumit_Vasava_Resume.pdf"
+                        class="btn-hero-resume">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
                         </svg>
                         <span>Resume</span>
                         <span class="resume-badge-tag">PDF</span>
@@ -150,7 +167,8 @@
                         <div class="term-title">bhumit@portfolio: ~</div>
                         <!-- Uiverse Custom Theme Switch (Wide Pill Knob) -->
                         <label class="term-switch" title="Toggle Terminal Theme">
-                            <input type="checkbox" id="termThemeToggle" class="toggle" aria-label="Toggle Terminal Theme">
+                            <input type="checkbox" id="termThemeToggle" class="toggle"
+                                aria-label="Toggle Terminal Theme">
                             <span class="slider"></span>
                         </label>
                     </div>
@@ -162,7 +180,8 @@
                         </div>
                         <div class="term-input-line">
                             <span class="term-prompt">bhumit@portfolio:~$</span>
-                            <input type="text" class="term-input" id="terminalInput" autocomplete="off" spellcheck="false" placeholder="type 'help'..."/>
+                            <input type="text" class="term-input" id="terminalInput" autocomplete="off"
+                                spellcheck="false" placeholder="type 'help'..." />
                         </div>
                     </div>
                     <!-- Interactive Quick Command Chips -->
@@ -219,10 +238,16 @@
                 <!-- Bio Card -->
                 <div class="bento-card bento-bio tilt-3d reveal-up delay-1">
                     <div class="bento-tag">Executive Bio</div>
-                    <h3>Co-founder &<br />Full-Stack Developer</h3>
-                    <p>I'm a Full-Stack Developer co-founding <strong>Pixel Forge Agency</strong>. I build clean web architectures, connect cloud databases, and actively study AI engineering to integrate speech models and NLP pipelines into real-world applications. My focus is always on building functional tools that go beyond basic API wrappers into production-ready products.</p>
+                    <h3>Bhumit Vasava<br /><span
+                            style="font-size: 0.7em; color: var(--text-2); font-weight: 500;">Co-founder & Full-Stack
+                            Developer</span></h3>
+                    <p>I'm a Full-Stack Developer co-founding <strong>Pixel Forge Agency</strong>. I build clean web
+                        architectures, connect cloud databases, and actively study AI engineering to integrate speech
+                        models and NLP pipelines into real-world applications. My focus is always on building functional
+                        tools that go beyond basic API wrappers into production-ready products.</p>
                     <div class="bio-links">
-                        <a href="https://github.com/BOOM-08" target="_blank" rel="noopener noreferrer" class="bio-link" aria-label="GitHub">
+                        <a href="https://github.com/BOOM-08" target="_blank" rel="noopener noreferrer" class="bio-link"
+                            aria-label="GitHub">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                                 <path
                                     d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
@@ -235,8 +260,8 @@
                                     d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                             </svg>
                         </a>
-                        <a href="https://www.instagram.com/08__boom?igsh=MWxyZzlobDE2dTd0Nw==" target="_blank" rel="noopener noreferrer"
-                            class="bio-link" aria-label="Instagram">
+                        <a href="https://www.instagram.com/08__boom?igsh=MWxyZzlobDE2dTd0Nw==" target="_blank"
+                            rel="noopener noreferrer" class="bio-link" aria-label="Instagram">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -288,7 +313,8 @@
                 <div class="bento-card bento-agency reveal-up delay-1">
                     <div class="bento-tag">Agency Focus</div>
                     <h4 class="agency-title">Pixel Forge Agency</h4>
-                    <p class="agency-desc">Co-founded to deliver full-stack applications, custom API pipelines, and high-conversion client portals.</p>
+                    <p class="agency-desc">Co-founded to deliver full-stack applications, custom API pipelines, and
+                        high-conversion client portals.</p>
                     <div class="agency-badges">
                         <span class="badge-item">Full-Stack</span>
                         <span class="badge-item">AI Speech</span>
@@ -314,82 +340,96 @@
         </div>
     </section>
 
-    <!-- ===== WHAT I DO SECTION ===== -->
+    <!-- ===== WHAT I DO SECTION (INTERACTIVE ARCHITECTURE CONSOLE) ===== -->
     <section class="section section-dark" id="whatido">
         <div class="container">
-            <div class="section-label reveal-up">02 — Domains</div>
+            <div class="section-label reveal-up">02 — Architecture Console</div>
             <h2 class="section-title reveal-up delay-1">
-                Beyond just <span class="text-grad">coding.</span>
+                System Engineering <span class="text-grad">Capabilities.</span>
             </h2>
-            <p class="section-sub reveal-up delay-2">The core engineering disciplines where I build, lead, and ship.</p>
+            <p class="section-sub reveal-up delay-2">Interactive topology of the core disciplines I architect and
+                deploy.</p>
 
-            <div class="domains-grid">
-
-                <!-- Full Stack Development -->
-                <div class="domain-card tilt-3d reveal-up delay-1">
-                    <div class="domain-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="2" y="3" width="20" height="14" rx="2" />
-                            <path d="M8 21h8M12 17v4" />
-                            <polyline points="7 9 12 14 17 9" />
-                        </svg>
-                    </div>
-                    <div class="domain-badge">Active</div>
-                    <h3 class="domain-title">Full Stack Development</h3>
-                    <p class="domain-desc">End-to-end web architectures — responsive interfaces on the frontend, intelligent APIs on the backend, and cloud databases tying it all together.</p>
-                    <div class="domain-tools">
-                        <span>Next.js</span><span>React</span><span>FastAPI</span><span>Supabase</span>
-                    </div>
+            <div class="arch-console reveal-up delay-3">
+                <!-- Left Nav Tabs -->
+                <div class="arch-nav">
+                    <button class="arch-tab active" data-arch="fullstack">
+                        <span class="arch-tab-num">01.</span> Full-Stack Systems
+                    </button>
+                    <button class="arch-tab" data-arch="ai">
+                        <span class="arch-tab-num">02.</span> AI Speech & NLP
+                    </button>
+                    <button class="arch-tab" data-arch="uiux">
+                        <span class="arch-tab-num">03.</span> UI/UX Engineering
+                    </button>
+                    <button class="arch-tab" data-arch="agency">
+                        <span class="arch-tab-num">04.</span> Agency Building
+                    </button>
                 </div>
 
-                <!-- Artificial Intelligence -->
-                <div class="domain-card tilt-3d reveal-up delay-2">
-                    <div class="domain-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20z" />
-                            <path d="M12 6v6l4 2" />
-                            <circle cx="12" cy="12" r="3" />
-                        </svg>
+                <!-- Right Live Stage -->
+                <div class="arch-stage">
+                    <div class="arch-stage-header">
+                        <span class="arch-status-dot pulse-green"></span>
+                        <span class="arch-status-text">System Online</span>
                     </div>
-                    <div class="domain-badge">Exploring</div>
-                    <h3 class="domain-title">Artificial Intelligence</h3>
-                    <p class="domain-desc">Integrating large language models, custom voice recognition pipelines, and speech-to-text systems into production-grade applications.</p>
-                    <div class="domain-tools">
-                        <span>Gemini Pro</span><span>Claude API</span><span>Whisper</span><span>Wav2Lip</span>
+
+                    <!-- Arch Panel: Full Stack -->
+                    <div class="arch-panel active" id="arch-fullstack">
+                        <div class="arch-diagram">
+                            <div class="arch-node">Client Web <span class="arch-pill">Next.js / React</span></div>
+                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                            <div class="arch-node">Backend API <span class="arch-pill">FastAPI / Node</span></div>
+                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                            <div class="arch-node">Database <span class="arch-pill">Supabase</span></div>
+                        </div>
+
+                        <p class="arch-desc">End-to-end web architectures featuring responsive interfaces on the
+                            frontend, intelligent APIs on the backend, and resilient cloud databases.</p>
+                    </div>
+
+                    <!-- Arch Panel: AI Speech & NLP -->
+                    <div class="arch-panel" id="arch-ai">
+                        <div class="arch-diagram">
+                            <div class="arch-node">Audio In <span class="arch-pill">Whisper STT</span></div>
+                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                            <div class="arch-node">NLP Engine <span class="arch-pill">Gemini / Claude</span></div>
+                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                            <div class="arch-node">Synthesis <span class="arch-pill">Wav2Lip TTS</span></div>
+                        </div>
+
+                        <p class="arch-desc">Integrating large language models, custom voice recognition pipelines, and
+                            speech-to-text systems into production-grade applications.</p>
+                    </div>
+
+                    <!-- Arch Panel: UI/UX Engineering -->
+                    <div class="arch-panel" id="arch-uiux">
+                        <div class="arch-diagram">
+                            <div class="arch-node">Wireframes <span class="arch-pill">Figma</span></div>
+                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                            <div class="arch-node">Design Sys <span class="arch-pill">Tailwind</span></div>
+                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                            <div class="arch-node">Interactions <span class="arch-pill">CSS / Framer</span></div>
+                        </div>
+
+                        <p class="arch-desc">Prototyping bespoke interfaces with responsive grids, scroll-driven
+                            animations, and pixel-precise layouts. Every interaction is intentional.</p>
+                    </div>
+
+                    <!-- Arch Panel: Agency Building -->
+                    <div class="arch-panel" id="arch-agency">
+                        <div class="arch-diagram">
+                            <div class="arch-node">Strategy <span class="arch-pill">Roadmap</span></div>
+                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                            <div class="arch-node">Execution <span class="arch-pill">Engineering</span></div>
+                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                            <div class="arch-node">Delivery <span class="arch-pill">Launch</span></div>
+                        </div>
+
+                        <p class="arch-desc">Co-founding and leading Pixel Forge Agency — from defining the product
+                            roadmap and service offerings to shipping client projects and growing the brand.</p>
                     </div>
                 </div>
-
-                <!-- UI/UX Design -->
-                <div class="domain-card tilt-3d reveal-up delay-3">
-                    <div class="domain-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="3" width="18" height="18" rx="3" />
-                            <path d="M3 9h18M9 21V9" />
-                        </svg>
-                    </div>
-                    <div class="domain-badge">Active</div>
-                    <h3 class="domain-title">UI/UX Design</h3>
-                    <p class="domain-desc">Prototyping bespoke interfaces with responsive grids, scroll-driven animations, and pixel-precise layouts. Every interaction is intentional.</p>
-                    <div class="domain-tools">
-                        <span>Tailwind CSS</span><span>Figma</span><span>Animations</span><span>Responsive</span>
-                    </div>
-                </div>
-
-                <!-- Startup Building -->
-                <div class="domain-card tilt-3d reveal-up delay-1">
-                    <div class="domain-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                        </svg>
-                    </div>
-                    <div class="domain-badge">Active</div>
-                    <h3 class="domain-title">Startup Building</h3>
-                    <p class="domain-desc">Co-founding and leading Pixel Forge Agency — from defining the product roadmap and service offerings to shipping client projects and growing the brand.</p>
-                    <div class="domain-tools">
-                        <span>Pixel Forge</span><span>Product Strategy</span><span>Client Work</span><span>Leadership</span>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
@@ -401,7 +441,8 @@
             <h2 class="section-title reveal-up delay-1">
                 Built with production tools.<br /><span class="text-grad">Categorized & verified.</span>
             </h2>
-            <p class="section-sub reveal-up delay-2">A clean breakdown of technologies I use to architect, build, and deploy production software.</p>
+            <p class="section-sub reveal-up delay-2">A clean breakdown of technologies I use to architect, build, and
+                deploy production software.</p>
 
             <!-- Categorized Skill Grid -->
             <div class="skill-matrix-grid reveal-up delay-2">
@@ -409,7 +450,7 @@
                 <!-- Category 1: Frontend & Core -->
                 <div class="matrix-card">
                     <div class="matrix-header">
-                        <div class="matrix-icon">⚡</div>
+                        <div class="matrix-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div>
                         <h3 class="matrix-category">Frontend & Core</h3>
                     </div>
                     <div class="matrix-tags">
@@ -439,7 +480,7 @@
                 <!-- Category 2: Backend & Databases -->
                 <div class="matrix-card">
                     <div class="matrix-header">
-                        <div class="matrix-icon">🛠️</div>
+                        <div class="matrix-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></div>
                         <h3 class="matrix-category">Backend & Cloud DB</h3>
                     </div>
                     <div class="matrix-tags">
@@ -469,7 +510,7 @@
                 <!-- Category 3: AI & Speech Pipelines -->
                 <div class="matrix-card">
                     <div class="matrix-header">
-                        <div class="matrix-icon">🤖</div>
+                        <div class="matrix-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg></div>
                         <h3 class="matrix-category">AI & Speech Engineering</h3>
                     </div>
                     <div class="matrix-tags">
@@ -503,7 +544,7 @@
                 <!-- Category 4: Tools & Operations -->
                 <div class="matrix-card">
                     <div class="matrix-header">
-                        <div class="matrix-icon">🚀</div>
+                        <div class="matrix-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg></div>
                         <h3 class="matrix-category">DevOps & Workflows</h3>
                     </div>
                     <div class="matrix-tags">
@@ -545,7 +586,8 @@
             <h2 class="section-title reveal-up delay-1">
                 Featured Case <span class="text-grad">Studies</span>
             </h2>
-            <p class="section-sub reveal-up delay-2">Real-world software applications built and shipped with measurable outcomes.</p>
+            <p class="section-sub reveal-up delay-2">Real-world software applications built and shipped with measurable
+                outcomes.</p>
 
             <!-- Filter Tabs -->
             <div class="filter-tabs reveal-up delay-2">
@@ -562,36 +604,53 @@
                 <article class="case-study-card reveal-up delay-1" data-category="ai">
                     <div class="case-card-header">
                         <div class="case-img-wrap">
-                            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80" alt="DubVibe Pro" class="case-img" />
+                            <img src="reference/dubvibe_logo.svg?v=4" alt="DubVibe Pro" class="case-img" loading="lazy" />
                             <div class="case-pill">AI Video Pipeline</div>
                         </div>
                         <div class="case-header-content">
                             <div class="case-year">2026 · AI / Python / FastAPI</div>
                             <h3 class="case-title">DubVibe Pro</h3>
-                            <p class="case-tagline">An automated multi-language video dubbing & lip-syncing pipeline.</p>
+                            <p class="case-tagline">An automated multi-language video dubbing & lip-syncing pipeline.
+                            </p>
                         </div>
                     </div>
                     <div class="case-card-body">
                         <div class="case-grid-3">
                             <div class="case-block">
                                 <span class="case-block-label">Problem</span>
-                                <p>Content creators struggled to reach global audiences due to high costs and unnatural voice quality of traditional dubbing services.</p>
+                                <p>Content creators struggled to reach global audiences due to high costs and unnatural
+                                    voice quality of traditional dubbing services.</p>
                             </div>
                             <div class="case-block">
                                 <span class="case-block-label">Architecture</span>
-                                <p>Built an automated backend with FastAPI using Gemini 1.5 Pro for contextual translation, OpenAI Whisper for STT, and Wav2Lip for frame lip-syncing.</p>
+                                <p>Built an automated backend with FastAPI using Gemini 1.5 Pro for contextual
+                                    translation, OpenAI Whisper for STT, and Wav2Lip for frame lip-syncing.</p>
                             </div>
                             <div class="case-block">
                                 <span class="case-block-label">Impact</span>
-                                <p>Reduced dubbing turnaround cost by 90% while maintaining near-native voice sync quality in 10+ languages.</p>
+                                <p>Reduced dubbing turnaround cost by 90% while maintaining near-native voice sync
+                                    quality in 10+ languages.</p>
                             </div>
                         </div>
                         <div class="case-footer">
                             <div class="case-tech-tags">
-                                <span>Python</span><span>FastAPI</span><span>Gemini Pro</span><span>Whisper</span><span>Wav2Lip</span>
+                                <span>Python</span><span>FastAPI</span><span>Gemini
+                                    Pro</span><span>Whisper</span><span>Wav2Lip</span>
                             </div>
-                            <a href="#contact" class="case-link-btn">View Details →</a>
+                            <a href="#" class="case-link-btn">View Details →</a>
                         </div>
+                    </div>
+                    <div class="case-json-xray">
+{
+  "system": "DubVibe Pro",
+  "stack": ["Python", "FastAPI"],
+  "ai_models": {
+    "translation": "Gemini Pro",
+    "speech_to_text": "Whisper",
+    "lip_sync": "Wav2Lip"
+  },
+  "impact": "90% cost reduction"
+}
                     </div>
                 </article>
 
@@ -599,73 +658,49 @@
                 <article class="case-study-card reveal-up delay-2" data-category="fullstack ai">
                     <div class="case-card-header">
                         <div class="case-img-wrap">
-                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="SkillBridge AI" class="case-img" />
+                            <img src="reference/skillbridge_logo.svg?v=4" alt="SkillBridge AI" class="case-img" loading="lazy" />
                             <div class="case-pill">Next.js 15 / Claude 4.5</div>
                         </div>
                         <div class="case-header-content">
                             <div class="case-year">2026 · Next.js / Supabase / Claude</div>
                             <h3 class="case-title">SkillBridge AI</h3>
-                            <p class="case-tagline">Real-time AI interview simulator & career skill gap assessment platform.</p>
+                            <p class="case-tagline">Real-time AI interview simulator & career skill gap assessment
+                                platform.</p>
                         </div>
                     </div>
                     <div class="case-card-body">
                         <div class="case-grid-3">
                             <div class="case-block">
                                 <span class="case-block-label">Problem</span>
-                                <p>Young developers and job candidates lacked accessible, realistic mock interview tools that adapt dynamically to technical roles.</p>
+                                <p>Young developers and job candidates lacked accessible, realistic mock interview tools
+                                    that adapt dynamically to technical roles.</p>
                             </div>
                             <div class="case-block">
                                 <span class="case-block-label">Architecture</span>
-                                <p>Full-stack Next.js 15 app integrated with Claude Sonnet 4.5 for adaptive interviewer persona and Supabase DB for user history & metrics.</p>
+                                <p>Full-stack Next.js 15 app integrated with Claude Sonnet 4.5 for adaptive interviewer
+                                    persona and Supabase DB for user history & metrics.</p>
                             </div>
                             <div class="case-block">
                                 <span class="case-block-label">Impact</span>
-                                <p>Delivered personalized real-time interview feedback and actionable skill gap scores for aspiring engineers.</p>
+                                <p>Delivered personalized real-time interview feedback and actionable skill gap scores
+                                    for aspiring engineers.</p>
                             </div>
                         </div>
                         <div class="case-footer">
                             <div class="case-tech-tags">
                                 <span>Next.js 15</span><span>React 19</span><span>Supabase</span><span>Claude 4.5</span>
                             </div>
-                            <a href="#contact" class="case-link-btn">View Details →</a>
+                            <a href="#" class="case-link-btn">View Details →</a>
                         </div>
                     </div>
-                </article>
-
-                <!-- 3. Pixel Forge Agency Portal -->
-                <article class="case-study-card reveal-up delay-3" data-category="fullstack frontend">
-                    <div class="case-card-header">
-                        <div class="case-img-wrap">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Pixel Forge Agency" class="case-img" />
-                            <div class="case-pill">Co-founded Agency Platform</div>
-                        </div>
-                        <div class="case-header-content">
-                            <div class="case-year">2023–2026 · Full-Stack / Agency</div>
-                            <h3 class="case-title">Pixel Forge Agency Portal</h3>
-                            <p class="case-tagline">Bespoke client onboarding, service pipeline, and product delivery platform.</p>
-                        </div>
-                    </div>
-                    <div class="case-card-body">
-                        <div class="case-grid-3">
-                            <div class="case-block">
-                                <span class="case-block-label">Problem</span>
-                                <p>Needed a flagship digital platform demonstrating elite design & development capabilities for client acquisition.</p>
-                            </div>
-                            <div class="case-block">
-                                <span class="case-block-label">Architecture</span>
-                                <p>Bespoke frontend built with React & custom CSS design system, backed by a Node.js management API and client workflow engine.</p>
-                            </div>
-                            <div class="case-block">
-                                <span class="case-block-label">Impact</span>
-                                <p>Serves as the primary operational portal for client onboarding and agency project management.</p>
-                            </div>
-                        </div>
-                        <div class="case-footer">
-                            <div class="case-tech-tags">
-                                <span>React</span><span>Node.js</span><span>Custom CSS</span><span>UI/UX Architecture</span>
-                            </div>
-                            <a href="#contact" class="case-link-btn">View Details →</a>
-                        </div>
+                    <div class="case-json-xray">
+{
+  "project": "SkillBridge AI",
+  "stack": ["Next.js", "Supabase", "Tailwind"],
+  "ai_model": "Claude 3.5 Sonnet",
+  "features": ["WebSocket backend", "Real-time roleplay"],
+  "metrics": "500+ active beta users"
+}
                     </div>
                 </article>
 
@@ -673,7 +708,7 @@
                 <article class="case-study-card reveal-up delay-1" data-category="fullstack">
                     <div class="case-card-header">
                         <div class="case-img-wrap">
-                            <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=800&q=80" alt="Vocaberry" class="case-img" />
+                            <img src="reference/vocaberry_logo.svg?v=6" alt="Vocaberry" class="case-img" loading="lazy" />
                             <div class="case-pill">Language Learning App</div>
                         </div>
                         <div class="case-header-content">
@@ -686,23 +721,37 @@
                         <div class="case-grid-3">
                             <div class="case-block">
                                 <span class="case-block-label">Problem</span>
-                                <p>Students struggle with long-term foreign vocabulary retention when relying solely on traditional flashcards.</p>
+                                <p>Students struggle with long-term foreign vocabulary retention when relying solely on
+                                    traditional flashcards.</p>
                             </div>
                             <div class="case-block">
                                 <span class="case-block-label">Architecture</span>
-                                <p>Interactive web application connecting AI mnemonic generation APIs with a Firebase cloud database for spaced repetition tracking.</p>
+                                <p>Interactive web application connecting AI mnemonic generation APIs with a Firebase
+                                    cloud database for spaced repetition tracking.</p>
                             </div>
                             <div class="case-block">
                                 <span class="case-block-label">Impact</span>
-                                <p>Significantly boosted vocabulary retention rates by transforming rote memory into associative learning.</p>
+                                <p>Significantly boosted vocabulary retention rates by transforming rote memory into
+                                    associative learning.</p>
                             </div>
                         </div>
                         <div class="case-footer">
                             <div class="case-tech-tags">
                                 <span>JavaScript</span><span>Firebase</span><span>AI Mnemonics</span><span>HTML5</span>
                             </div>
-                            <a href="#contact" class="case-link-btn">View Details →</a>
+                            <a href="#" class="case-link-btn">View Details →</a>
                         </div>
+                    </div>
+                    <div class="case-json-xray">
+{
+  "app": "Vocaberry",
+  "stack": ["JavaScript", "HTML5", "Firebase"],
+  "features": [
+    "Spaced-repetition algorithm",
+    "AI mnemonics"
+  ],
+  "rating": "4.8/5 satisfaction"
+}
                     </div>
                 </article>
 
@@ -710,7 +759,7 @@
                 <article class="case-study-card reveal-up delay-2" data-category="frontend">
                     <div class="case-card-header">
                         <div class="case-img-wrap">
-                            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Core Gym Platform" class="case-img" />
+                            <img src="reference/coregym_logo.svg?v=5" alt="Core Gym Platform" class="case-img" loading="lazy" />
                             <div class="case-pill">High-Conversion Web App</div>
                         </div>
                         <div class="case-header-content">
@@ -723,23 +772,38 @@
                         <div class="case-grid-3">
                             <div class="case-block">
                                 <span class="case-block-label">Problem</span>
-                                <p>Gym needed a modern digital presence to convert online traffic into paying gym members.</p>
+                                <p>Gym needed a modern digital presence to convert online traffic into paying gym
+                                    members.</p>
                             </div>
                             <div class="case-block">
                                 <span class="case-block-label">Architecture</span>
-                                <p>Designed scroll-driven micro-interactions, responsive typography grid, and class booking flow using vanilla web tech.</p>
+                                <p>Designed scroll-driven micro-interactions, responsive typography grid, and class
+                                    booking flow using vanilla web tech.</p>
                             </div>
                             <div class="case-block">
                                 <span class="case-block-label">Impact</span>
-                                <p>Increased online membership conversion rates by 45% within the first 60 days post-launch.</p>
+                                <p>Increased online membership conversion rates by 45% within the first 60 days
+                                    post-launch.</p>
                             </div>
                         </div>
                         <div class="case-footer">
                             <div class="case-tech-tags">
                                 <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive UX</span>
                             </div>
-                            <a href="#contact" class="case-link-btn">View Details →</a>
+                            <a href="#" class="case-link-btn">View Details →</a>
                         </div>
+                    </div>
+                    <div class="case-json-xray">
+{
+  "client": "Core Gym",
+  "stack": ["HTML5", "CSS3", "JavaScript"],
+  "ui_ux": [
+    "Scroll-driven interactions",
+    "Responsive typography",
+    "Class booking flow"
+  ],
+  "impact": "45% conversion increase"
+}
                     </div>
                 </article>
 
@@ -747,180 +811,155 @@
         </div>
     </section>
 
-    <!-- ===== EXPERIENCE SECTION ===== -->
+    <!-- ===== EXPERIENCE SECTION (GIT RELEASE TIMELINE) ===== -->
     <section class="section timeline-section-light" id="experience">
         <div class="container">
             <div class="section-label reveal-up">05 — Experience</div>
-            <h2 class="section-title reveal-up delay-1">My <span class="text-grad">Journey</span></h2>
+            <h2 class="section-title reveal-up delay-1">Production <span class="text-grad">Release Log</span></h2>
+            <p class="section-sub reveal-up delay-2">Career journey formatted as production software releases.</p>
 
-            <div class="timeline">
-                <div class="timeline-line"></div>
+            <div class="git-timeline reveal-up delay-3">
+                <div class="git-branch-line"></div>
 
-                <div class="timeline-item reveal-up delay-1">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card tilt-3d">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Co-founder & Full Stack Developer</h3>
-                                <span class="timeline-company">Pixel Forge Agency</span>
-                            </div>
-                            <span class="timeline-date">2026 — Present</span>
+                <!-- Release 1 -->
+                <div class="git-commit-node">
+                    <div class="git-commit-dot"></div>
+                    <div class="git-commit-card tilt-3d">
+                        <div class="git-commit-header">
+                            <span class="git-tag">tag: v2026.1-PROD</span>
+                            <span class="git-date">2026 — Present</span>
                         </div>
-                        <p>Co-founded and currently lead a digital agency delivering premium full-stack and AI-integrated web applications. Manage client relationships, architectural decisions, and a growing team of developers.</p>
-                        <div class="timeline-tags">
-                            <span>Next.js</span><span>Python</span><span>AI Integration</span><span>Team Lead</span>
+                        <h3 class="git-commit-title">Pixel Forge Agency</h3>
+                        <p class="git-commit-role">Co-founder & Full Stack Developer</p>
+                        <p class="git-commit-desc">Managing client relationships, technical architecture, and a growing
+                            team of developers delivering premium AI-integrated web applications.</p>
+                        <div class="git-tech-stack">
+                            <span>Next.js</span><span>Python</span><span>AI Integration</span><span>Leadership</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="timeline-item reveal-up delay-2">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card tilt-3d">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Freelancer (Self-Employed)</h3>
-                                <span class="timeline-company">Independent</span>
-                            </div>
-                            <span class="timeline-date">2026 — Present</span>
+                <!-- Release 2 -->
+                <div class="git-commit-node">
+                    <div class="git-commit-dot"></div>
+                    <div class="git-commit-card tilt-3d">
+                        <div class="git-commit-header">
+                            <span class="git-tag">tag: v2026.0-RELEASE</span>
+                            <span class="git-date">2026 — Present</span>
                         </div>
-                        <p>Delivered complex web applications and AI tools for international clients. Specialized in React/Next.js frontends paired with Python FastAPI backends and automated pipelines.</p>
-                        <div class="timeline-tags">
+                        <h3 class="git-commit-title">Independent Freelancer</h3>
+                        <p class="git-commit-role">Full-Stack Architect</p>
+                        <p class="git-commit-desc">Delivered complex web applications and AI tools for international
+                            clients. Specialized in React/Next.js frontends paired with Python FastAPI backends and
+                            automated pipelines.</p>
+                        <div class="git-tech-stack">
                             <span>Full-Stack</span><span>FastAPI</span><span>React</span><span>Supabase</span>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- ===== CERTIFICATIONS SECTION ===== -->
+    <!-- ===== CERTIFICATIONS SECTION (DIGITAL VAULT) ===== -->
     <section class="section parallax-section" id="certifications">
         <div class="container">
             <div class="section-label reveal-up">06 — Certifications</div>
-            <h2 class="section-title reveal-up delay-1">Verified <span class="text-grad">Credentials</span></h2>
-            <p class="section-sub reveal-up delay-2">Verified completion certificates representing hands-on engineering competencies.</p>
+            <h2 class="section-title reveal-up delay-1">Credential <span class="text-grad">Vault</span></h2>
+            <p class="section-sub reveal-up delay-2">Verified clearance for engineering competencies. View raw PDFs
+                directly in-browser.</p>
 
-            <div class="certs-grid">
+            <div class="tech-tree-wrapper reveal-up delay-1">
+                <div class="tech-tree-container" id="techTreeContainer">
+                    <!-- SVG canvas for glowing connecting lines -->
+                    <svg class="tech-tree-svg">
+                        <!-- Lines from core to certs -->
+                        <line class="tree-line line-ms" x1="50%" y1="50%" x2="20%" y2="50%"></line>
+                        <line class="tree-line line-cisco" x1="50%" y1="50%" x2="80%" y2="25%"></line>
+                        <line class="tree-line line-google" x1="50%" y1="50%" x2="80%" y2="75%"></line>
+                    </svg>
 
-                <!-- Certificate 1: Microsoft Learn Student Ambassador -->
-                <div class="cert-card tilt-3d reveal-up delay-1">
-                    <div class="cert-card-header">
-                        <div class="cert-brand-logo ms-logo">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="2" y="2" width="9" height="9" fill="#F25022"/>
-                                <rect x="13" y="2" width="9" height="9" fill="#7FBA00"/>
-                                <rect x="2" y="13" width="9" height="9" fill="#00A4EF"/>
-                                <rect x="13" y="13" width="9" height="9" fill="#FFB900"/>
-                            </svg>
+                    <!-- Central Core Node -->
+                    <div class="tree-node node-core" id="coreNode">
+                        <div class="node-icon-wrap">
+                            <div class="node-pulse-ring"></div>
+                            <div class="node-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                            </div>
                         </div>
-                        <div class="cert-verified-badge">
-                            <span class="pulse-dot green"></span>
-                            Verified Credential
-                        </div>
+                        <div class="node-label">Engineering Core</div>
                     </div>
-                    <div class="cert-body">
-                        <span class="cert-issuer">Microsoft Learn</span>
-                        <h3 class="cert-title">Student Ambassador — Event Coordinator</h3>
-                        <p class="cert-desc">Recognized for coordinating the "Getting Started with Postman" session as part of the Microsoft Learn Student Ambassador program.</p>
-                        <div class="cert-meta">
-                            <span class="cert-tag">Microsoft</span>
-                            <span class="cert-tag">Community</span>
-                            <span class="cert-tag">Event Lead</span>
+
+                    <!-- Certification Nodes -->
+                    <div class="tree-node node-cert node-ms" data-cert="ms" data-issuer="Microsoft Learn" data-title="Student Ambassador" data-role="Event Coordinator (Postman)" data-pdf="certificates/Bhumit_Vasava_Postman_Certificate.pdf">
+                        <div class="node-icon-wrap">
+                            <div class="node-pulse-ring"></div>
+                            <div class="node-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zM24 11.4H12.6V0H24v11.4z"/>
+                                </svg>
+                            </div>
                         </div>
+                        <div class="node-label">Microsoft <span class="node-badge">Verified</span></div>
                     </div>
-                    <a href="certificates/Mr. Vasava Bhumit_certificate.pdf" target="_blank" rel="noopener noreferrer" class="cert-view-btn" aria-label="View Certificate">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                            <polyline points="14 2 14 8 20 8"></polyline>
-                            <line x1="16" y1="13" x2="8" y2="13"></line>
-                            <line x1="16" y1="17" x2="8" y2="17"></line>
-                            <polyline points="10 9 9 9 8 9"></polyline>
-                        </svg>
-                        <span>View Certificate PDF</span>
-                    </a>
+
+                    <div class="tree-node node-cert node-cisco" data-cert="cisco" data-issuer="Cisco Networking Academy" data-title="Operating Systems Basics" data-role="OS Architecture (Oct 2024)" data-pdf="certificates/Bhumit_Vasava_OS_Certificate.pdf">
+                        <div class="node-icon-wrap">
+                            <div class="node-pulse-ring"></div>
+                            <div class="node-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                    <path d="M6 18v-4M9 18V9M12 18V6M15 18V9M18 18v-4M3 18v-1"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="node-label">Cisco OS <span class="node-badge">Verified</span></div>
+                    </div>
+
+                    <div class="tree-node node-cert node-google" data-cert="google" data-issuer="Google AI Studio" data-title="AI Studio Participation" data-role="Workshop Completion (Dec 2025)" data-pdf="certificates/Bhumit_Vasava_AI_Studio_Certificate.pdf">
+                        <div class="node-icon-wrap">
+                            <div class="node-pulse-ring"></div>
+                            <div class="node-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 23c6.075 0 11-4.925 11-11S18.075 1 12 1 1 5.925 1 12s4.925 11 11 11z" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 6v12M6 12h12"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="node-label">Google AI <span class="node-badge">Verified</span></div>
+                    </div>
                 </div>
 
-                <!-- Certificate 2: Cisco Networking Academy / Parul University - OS Basics -->
-                <div class="cert-card tilt-3d reveal-up delay-2">
-                    <div class="cert-card-header">
-                        <div class="cert-brand-logo cisco-logo">
-                            <svg width="36" height="20" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="10" y="20" width="6" height="20" rx="3" fill="#049FD9"/>
-                                <rect x="22" y="10" width="6" height="40" rx="3" fill="#049FD9"/>
-                                <rect x="34" y="0" width="6" height="60" rx="3" fill="#049FD9"/>
-                                <rect x="46" y="10" width="6" height="40" rx="3" fill="#049FD9"/>
-                                <rect x="58" y="20" width="6" height="20" rx="3" fill="#049FD9"/>
-                            </svg>
-                        </div>
-                        <div class="cert-verified-badge">
-                            <span class="pulse-dot green"></span>
-                            Verified Credential
-                        </div>
+                <!-- Heads Up Display (HUD) Side Panel -->
+                <div class="tree-hud" id="techTreeHud">
+                    <div class="hud-header">
+                        <span>SYSTEM_SCAN // ACTIVE</span>
+                        <button class="hud-close-btn" id="hudCloseBtn" aria-label="Close HUD">&times;</button>
                     </div>
-                    <div class="cert-body">
-                        <span class="cert-issuer">Cisco Networking Academy · Parul Univ</span>
-                        <h3 class="cert-title">Operating Systems Basics</h3>
-                        <p class="cert-desc">Completed Operating Systems Basics through the Faculty of Engineering and Technology, Parul University & Cisco Academy. Date: Oct 2024.</p>
-                        <div class="cert-meta">
-                            <span class="cert-tag">Cisco</span>
-                            <span class="cert-tag">OS Architecture</span>
-                            <span class="cert-tag">Oct 2024</span>
-                        </div>
+                    <div class="hud-content" id="hudContent">
+                        <div class="hud-placeholder">Click or hover any node to inspect credential data.</div>
                     </div>
-                    <a href="certificates/Operating_Systems_Basics_certificate_2303466200381-paruluniversity-ac-in_38d7c353-001b-4d50-806a-ef55acb4c809.pdf" target="_blank" rel="noopener noreferrer" class="cert-view-btn" aria-label="View Certificate">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                            <polyline points="14 2 14 8 20 8"></polyline>
-                            <line x1="16" y1="13" x2="8" y2="13"></line>
-                            <line x1="16" y1="17" x2="8" y2="17"></line>
-                            <polyline points="10 9 9 9 8 9"></polyline>
-                        </svg>
-                        <span>View Certificate PDF</span>
-                    </a>
                 </div>
-
-                <!-- Certificate 3: Google Student Ambassadors - Google AI Studio -->
-                <div class="cert-card tilt-3d reveal-up delay-3">
-                    <div class="cert-card-header">
-                        <div class="cert-brand-logo google-logo">
-                            <svg width="26" height="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-                            </svg>
-                        </div>
-                        <div class="cert-verified-badge">
-                            <span class="pulse-dot green"></span>
-                            Verified Credential
-                        </div>
-                    </div>
-                    <div class="cert-body">
-                        <span class="cert-issuer">Google · Google Student Ambassadors</span>
-                        <h3 class="cert-title">Google AI Studio Participation</h3>
-                        <p class="cert-desc">Awarded for successfully participating in the "Getting Started with Google AI Studio" workshop at Parul University Institute. Date: Dec 2025.</p>
-                        <div class="cert-meta">
-                            <span class="cert-tag">Google AI</span>
-                            <span class="cert-tag">AI Studio</span>
-                            <span class="cert-tag">Dec 2025</span>
-                        </div>
-                    </div>
-                    <a href="certificates/VASAVA BHUMIT_Certificate.pdf" target="_blank" rel="noopener noreferrer" class="cert-view-btn" aria-label="View Certificate">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                            <polyline points="14 2 14 8 20 8"></polyline>
-                            <line x1="16" y1="13" x2="8" y2="13"></line>
-                            <line x1="16" y1="17" x2="8" y2="17"></line>
-                            <polyline points="10 9 9 9 8 9"></polyline>
-                        </svg>
-                        <span>View Certificate PDF</span>
-                    </a>
-                </div>
-
             </div>
         </div>
     </section>
+
+    <!-- PDF Quick Viewer Modal -->
+    <div class="pdf-modal-backdrop" id="pdfModalBackdrop" aria-hidden="true">
+        <div class="pdf-modal-container" role="dialog" aria-modal="true" aria-label="PDF Viewer">
+            <div class="pdf-modal-header">
+                <span class="pdf-modal-title">Secure Credential Viewer</span>
+                <button class="pdf-modal-close" id="pdfModalClose" aria-label="Close Viewer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="pdf-modal-body">
+                <iframe id="pdfIframe" src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
 
     <!-- ===== CONTACT SECTION ===== -->
     <section class="section contact-section" id="contact">
@@ -929,23 +968,27 @@
                 <div class="contact-left">
                     <div class="section-label">07 — Contact</div>
                     <h2 class="section-title">Let's build something <span class="text-grad">incredible.</span></h2>
-                    <p class="contact-sub">Need a functional web application, a custom AI pipeline, or a solid database architecture? Let me know about your project.</p>
+                    <p class="contact-sub">Need a functional web application, a custom AI pipeline, or a solid database
+                        architecture? Let me know about your project.</p>
                     <div class="contact-info">
                         <a href="mailto:vasavabhumit4@gmail.com" class="contact-info-row">
                             <div class="contact-icon">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                                     <polyline points="22,6 12,13 2,6" />
                                 </svg>
                             </div>
                             <span>vasavabhumit4@gmail.com</span>
                         </a>
                         <div class="contact-social">
-                            <a href="https://github.com/BOOM-08" target="_blank" rel="noopener noreferrer" class="social-pill">GitHub</a>
+                            <a href="https://github.com/BOOM-08" target="_blank" rel="noopener noreferrer"
+                                class="social-pill">GitHub</a>
                             <a href="https://www.linkedin.com/in/bhumit-vasava-24565b357?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                                 target="_blank" rel="noopener noreferrer" class="social-pill">LinkedIn</a>
-                            <a href="https://www.instagram.com/08__boom?igsh=MWxyZzlobDE2dTd0Nw==" target="_blank" rel="noopener noreferrer"
-                                class="social-pill">Instagram</a>
+                            <a href="https://www.instagram.com/08__boom?igsh=MWxyZzlobDE2dTd0Nw==" target="_blank"
+                                rel="noopener noreferrer" class="social-pill">Instagram</a>
                         </div>
                     </div>
                 </div>
@@ -964,19 +1007,22 @@
                         </div>
                         <div class="form-group console-input-group">
                             <div class="console-prompt">
-                                <span class="c-keyword">const</span> <span class="c-var">name</span> <span class="c-operator">=</span>
+                                <span class="c-keyword">const</span> <span class="c-var">name</span> <span
+                                    class="c-operator">=</span>
                             </div>
                             <input type="text" id="name" name="name" placeholder='"Jane Smith"' required />
                         </div>
                         <div class="form-group console-input-group">
                             <div class="console-prompt">
-                                <span class="c-keyword">const</span> <span class="c-var">email</span> <span class="c-operator">=</span>
+                                <span class="c-keyword">const</span> <span class="c-var">email</span> <span
+                                    class="c-operator">=</span>
                             </div>
                             <input type="email" id="email" name="email" placeholder='"jane@company.com"' required />
                         </div>
                         <div class="form-group console-input-group">
                             <div class="console-prompt">
-                                <span class="c-keyword">const</span> <span class="c-var">projectType</span> <span class="c-operator">=</span>
+                                <span class="c-keyword">const</span> <span class="c-var">projectType</span> <span
+                                    class="c-operator">=</span>
                             </div>
                             <select id="project" name="project">
                                 <option value="">"Select service..."</option>
@@ -989,15 +1035,18 @@
                         </div>
                         <div class="form-group console-input-group">
                             <div class="console-prompt">
-                                <span class="c-keyword">const</span> <span class="c-var">message</span> <span class="c-operator">=</span>
+                                <span class="c-keyword">const</span> <span class="c-var">message</span> <span
+                                    class="c-operator">=</span>
                             </div>
-                            <textarea id="message" name="message" rows="3" placeholder='`Tell me about your project...`' required></textarea>
+                            <textarea id="message" name="message" rows="3" placeholder='`Tell me about your project...`'
+                                required></textarea>
                         </div>
                         <button type="submit" class="btn-submit console-code-btn" id="submitBtn">
                             <span>bhumit.sendContact();</span>
                         </button>
                         <div class="form-success" id="formSuccess">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
                                 <polyline points="20 6 9 17 4 12" />
                             </svg>
                             Message sent! I'll get back to you soon.
@@ -1012,10 +1061,20 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-inner">
-                <a href="#home" class="logo">
-                    <span class="logo-text">B</span>humit<span class="logo-dot">.</span>
+                <a href="#home" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+                    <img src="assets/bhumit-logo.svg?v=5" alt="Bhumit Logo" style="height: 28px; display: block;" />
                 </a>
-                <p class="footer-copy">&copy; 2026 Bhumit · Pixel Forge Agency. All rights reserved.</p>
+                
+                <div class="footer-contact" style="display: flex; gap: 20px; align-items: center;">
+                    <p class="footer-copy">&copy; 2026 Bhumit · Pixel Forge Agency. All rights reserved.</p>
+                    <a href="mailto:vasavabhumit4@gmail.com" class="btn-hire" style="padding: 0.4rem 1rem; font-size: 12px; transform: none; box-shadow: none; white-space: nowrap;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px;">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        Email Me
+                    </a>
+                </div>
                 <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M18 15l-6-6-6 6" />
@@ -1033,44 +1092,45 @@
                     <circle cx="11" cy="11" r="8"></circle>
                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
-                <input type="text" id="cmdPaletteInput" placeholder="Type a command or search section..." autocomplete="off" />
+                <input type="text" id="cmdPaletteInput" placeholder="Type a command or search section..."
+                    autocomplete="off" />
                 <span class="cmd-palette-esc">ESC</span>
             </div>
             <div class="cmd-palette-results" id="cmdPaletteResults">
                 <!-- Group: Quick Navigation -->
                 <div class="cmd-group-title">QUICK NAVIGATION</div>
                 <div class="cmd-item active" data-action="nav" data-target="#home">
-                    <span class="cmd-item-icon">⚡</span>
+                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span>
                     <span class="cmd-item-label">Hero & Overview</span>
                     <span class="cmd-kbd">↵ Jump</span>
                 </div>
                 <div class="cmd-item" data-action="nav" data-target="#about">
-                    <span class="cmd-item-icon">👨‍💻</span>
+                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg></span>
                     <span class="cmd-item-label">Executive Profile (Bento Grid)</span>
                     <span class="cmd-kbd">↵ Jump</span>
                 </div>
                 <div class="cmd-item" data-action="nav" data-target="#skills">
-                    <span class="cmd-item-icon">🛠️</span>
+                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
                     <span class="cmd-item-label">Skill Matrix & Competencies</span>
                     <span class="cmd-kbd">↵ Jump</span>
                 </div>
                 <div class="cmd-item" data-action="nav" data-target="#projects">
-                    <span class="cmd-item-icon">🚀</span>
-                    <span class="cmd-item-label">Case Studies (5 Projects)</span>
+                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></span>
+                    <span class="cmd-item-label">Case Studies (4 Projects)</span>
                     <span class="cmd-kbd">↵ Jump</span>
                 </div>
                 <div class="cmd-item" data-action="nav" data-target="#experience">
-                    <span class="cmd-item-icon">💼</span>
+                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></span>
                     <span class="cmd-item-label">Journey & Experience Timeline</span>
                     <span class="cmd-kbd">↵ Jump</span>
                 </div>
                 <div class="cmd-item" data-action="nav" data-target="#certifications">
-                    <span class="cmd-item-icon">🎓</span>
+                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg></span>
                     <span class="cmd-item-label">Verified Credentials (MS / Cisco / Google)</span>
                     <span class="cmd-kbd">↵ Jump</span>
                 </div>
                 <div class="cmd-item" data-action="nav" data-target="#contact">
-                    <span class="cmd-item-icon">📫</span>
+                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
                     <span class="cmd-item-label">Code Console Contact Form</span>
                     <span class="cmd-kbd">↵ Jump</span>
                 </div>
@@ -1078,17 +1138,17 @@
                 <!-- Group: Quick Actions -->
                 <div class="cmd-group-title">QUICK ACTIONS</div>
                 <div class="cmd-item" data-action="copy-email">
-                    <span class="cmd-item-icon">📋</span>
+                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></span>
                     <span class="cmd-item-label">Copy Email (vasavabhumit4@gmail.com)</span>
                     <span class="cmd-kbd">Action</span>
                 </div>
                 <div class="cmd-item" data-action="download-resume">
-                    <span class="cmd-item-icon">📄</span>
+                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg></span>
                     <span class="cmd-item-label">Download Resume (PDF)</span>
                     <span class="cmd-kbd">Action</span>
                 </div>
                 <div class="cmd-item" data-action="toggle-cli-mode">
-                    <span class="cmd-item-icon">🌙</span>
+                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
                     <span class="cmd-item-label">Toggle Terminal CLI Theme</span>
                     <span class="cmd-kbd">Action</span>
                 </div>
@@ -1104,11 +1164,12 @@
     <!-- ===== PROJECT DEEP-DIVE DRAWER MODAL ===== -->
     <div class="project-drawer-backdrop" id="projectDrawerBackdrop" aria-hidden="true">
         <div class="project-drawer-dialog" role="dialog" aria-modal="true">
-            <button class="project-drawer-close" id="projectDrawerClose" aria-label="Close drawer">✕</button>
+            <button class="project-drawer-close" id="projectDrawerClose" aria-label="Close drawer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
             <div class="project-drawer-header">
                 <span class="project-drawer-category" id="drawerCategory">AI & SPEECH PIPELINE</span>
                 <h2 class="project-drawer-title" id="drawerTitle">DubVibe Pro</h2>
-                <p class="project-drawer-tagline" id="drawerTagline">Automated Multilingual Voice & Lip-Sync Pipeline</p>
+                <p class="project-drawer-tagline" id="drawerTagline">Automated Multilingual Voice & Lip-Sync Pipeline
+                </p>
             </div>
             <div class="project-drawer-body" id="drawerBody">
                 <!-- Content dynamically injected via JS -->
@@ -1117,7 +1178,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="assets/script.js?v=6.0"></script>
+    <script src="assets/script.js?v=7.2"></script>
 </body>
 
 </html>

@@ -1,9 +1,20 @@
-# Temp files
-.gemini/
+# Dependencies
+node_modules/
+package-lock.json
+
+# OS generated files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
 
-# Project reference materials that don't need to be public (optional)
-# Add them if you want to keep your repo light
-# reference/code.html
-# reference/screen.png
+# IDE & Editor files
+.vscode/
+.idea/
+*.code-workspace
+
+# Gemini system files
+.gemini/
