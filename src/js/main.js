@@ -1065,7 +1065,7 @@ AI/ML:     NLP pipelines, Gemini API, Claude API, Wav2Lip`;
             pipeline: ['1. Video Input & Audio Extraction', '2. OpenAI Whisper Speech-to-Text Transcribe', '3. Gemini Pro Contextual Neural Translation', '4. Voice Synthesis & Wav2Lip Model Lip-Syncing'],
             problem: 'Content creators pay thousands of dollars for manual video localization.',
             solution: 'Engineered an asynchronous Python pipeline reducing dubbing costs by 90% with sub-minute turnaround.',
-            links: { demo: 'https://github.com/BOOM-08/video_dubbing_ai', code: 'https://github.com/BOOM-08/video_dubbing_ai' }
+            links: { demo: '#', code: '#' }
         },
         'skillbridge': {
             category: 'FULL-STACK AI APPLICATION',
@@ -1074,7 +1074,7 @@ AI/ML:     NLP pipelines, Gemini API, Claude API, Wav2Lip`;
             pipeline: ['1. Role & Tech Stack Selection', '2. Dynamic Prompt Generation via Claude Sonnet', '3. Real-Time Voice Speech Evaluation', '4. Automated Code Feedback Report'],
             problem: 'Job seekers lack realistic technical interview practice with instant feedback.',
             solution: 'Built a responsive interview app powered by Next.js 15 App Router and Claude Sonnet API.',
-            links: { demo: 'https://github.com/BOOM-08/SKILL_BRIDGE_AI', code: 'https://github.com/BOOM-08/SKILL_BRIDGE_AI' }
+            links: { demo: '#', code: '#' }
         },
         'vocaberry': {
             category: 'AI LANGUAGE LEARNING',
@@ -1092,7 +1092,7 @@ AI/ML:     NLP pipelines, Gemini API, Claude API, Wav2Lip`;
             pipeline: ['1. HTML5/CSS3 Responsive Layout', '2. Vanilla JS Scroll Interactions', '3. Class Schedule Booking Flow', '4. Fast Vercel CDN Delivery'],
             problem: 'Local gyms lose online membership sales due to sluggish websites.',
             solution: 'Shipped a fast vanilla web app boosting online membership signups by 45%.',
-            links: { demo: 'https://github.com/BOOM-08/CORE-GYM', code: 'https://github.com/BOOM-08/CORE-GYM' }
+            links: { demo: '#', code: '#' }
         }
     };
 
@@ -1122,9 +1122,15 @@ AI/ML:     NLP pipelines, Gemini API, Claude API, Wav2Lip`;
                 </div>
 
                 <div class="drawer-links-group">
+                    ${data.links && data.links.demo && data.links.demo !== '#' ? `
                     <a href="${data.links.demo}" target="_blank" rel="noopener noreferrer" id="drawerRepoLink" class="drawer-btn drawer-btn-primary">
                         View GitHub Repo ↗
                     </a>
+                    ` : `
+                    <span class="drawer-btn drawer-btn-primary" style="opacity: 0.85; cursor: default; background: rgba(255, 255, 255, 0.08); color: var(--text-2); border: 1px dashed rgba(255, 255, 255, 0.2);">
+                        🔒 Code Protected (Inquire)
+                    </span>
+                    `}
                     <a href="#contact" id="drawerContactLink" class="drawer-btn drawer-btn-secondary">
                         Inquire About Project →
                     </a>
