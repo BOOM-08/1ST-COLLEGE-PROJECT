@@ -2213,6 +2213,38 @@ html.pdf-modal-open #cursorRing {
   transform: translateX(3px);
 }
 
+.case-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.case-repo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--text-1);
+  background: transparent;
+  border: 2px solid var(--text-1);
+  padding: 0.4rem 1.2rem;
+  border-radius: var(--radius-full);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.case-repo-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(234, 88, 12, 0.35);
+}
+
 /* Verified Cert Header Badge */
 .cert-header-badge {
   position: absolute;
