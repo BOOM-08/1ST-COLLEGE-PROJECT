@@ -18,3 +18,7 @@ Thumbs.db
 
 # Gemini system files
 .gemini/
+
+# Vite Production Build
+dist/
+dist-ssr/
