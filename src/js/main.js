@@ -1122,7 +1122,7 @@ AI/ML:     NLP pipelines, Gemini API, Claude API, Wav2Lip`;
                 </div>
 
                 <div class="drawer-links-group">
-                    <a href="${data.links.demo}" target="_blank" rel="noopener noreferrer" class="drawer-btn drawer-btn-primary">
+                    <a href="${data.links.demo}" target="_blank" rel="noopener noreferrer" id="drawerRepoLink" class="drawer-btn drawer-btn-primary">
                         View GitHub Repo ↗
                     </a>
                     <a href="#contact" id="drawerContactLink" class="drawer-btn drawer-btn-secondary">
@@ -1130,6 +1130,15 @@ AI/ML:     NLP pipelines, Gemini API, Claude API, Wav2Lip`;
                     </a>
                 </div>
             `;
+            const repoBtn = drawerBody.querySelector('#drawerRepoLink');
+            if (repoBtn) {
+                repoBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (data.links && data.links.demo && data.links.demo !== '#') {
+                        window.open(data.links.demo, '_blank', 'noopener,noreferrer');
+                    }
+                });
+            }
             const contactBtn = drawerBody.querySelector('#drawerContactLink');
             if (contactBtn) {
                 contactBtn.addEventListener('click', () => closeProjectDrawer());
