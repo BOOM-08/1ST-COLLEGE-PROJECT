@@ -4055,6 +4055,13 @@ html.pdf-modal-open #cursorRing {
   opacity: 0.5;
   transition: stroke 0.3s, opacity 0.3s, stroke-width 0.3s;
 }
+.tree-line.line-anthropic.active {
+  stroke: #d97758;
+  stroke-width: 3;
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(217, 119, 88, 0.6));
+  animation: dataFlowFast 1.5s linear infinite;
+}
 .tree-line.line-ms.active {
   stroke: #00a4ef;
   stroke-width: 3;
@@ -4143,6 +4150,11 @@ html.pdf-modal-open #cursorRing {
   box-shadow: 0 4px 16px rgba(0,0,0,0.6);
   transition: all 0.3s ease;
 }
+.node-anthropic:hover .node-icon, .node-anthropic.active .node-icon {
+  border-color: #d97758;
+  color: #d97758;
+  box-shadow: 0 0 24px rgba(217, 119, 88, 0.4);
+}
 .node-ms:hover .node-icon, .node-ms.active .node-icon {
   border-color: #00a4ef;
   color: #00a4ef;
@@ -4200,14 +4212,21 @@ html.pdf-modal-open #cursorRing {
 
 /* Positioning */
 .node-core { top: 50%; left: 50%; }
-.node-ms { top: 50%; left: 20%; }
+.node-anthropic { top: 25%; left: 20%; }
+.node-ms { top: 75%; left: 20%; }
 .node-cisco { top: 25%; left: 80%; }
 .node-google { top: 75%; left: 80%; }
 
 @media (max-width: 768px) {
-  .tech-tree-container { height: 560px; }
-  .node-ms { top: 22%; left: 50%; }
-  .node-cisco { top: 78%; left: 28%; }
-  .node-google { top: 78%; left: 72%; }
+  .tech-tree-container { height: 600px; }
+  .node-anthropic { top: 20%; left: 28%; }
+  .node-cisco { top: 20%; left: 72%; }
+  .node-ms { top: 80%; left: 28%; }
+  .node-google { top: 80%; left: 72%; }
+  
+  .line-anthropic { x2: 28%; y2: 20%; }
+  .line-cisco { x2: 72%; y2: 20%; }
+  .line-ms { x2: 28%; y2: 80%; }
+  .line-google { x2: 72%; y2: 80%; }
 }
 
