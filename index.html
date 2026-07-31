@@ -23,7 +23,8 @@
     <meta property="og:image" content="reference/screen.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Bhumit | Full-Stack Developer & AI Engineer" />
-    <meta name="twitter:description" content="Building intelligent web applications powered by NLP, speech models, real-time backends, and modern frontend frameworks." />
+    <meta name="twitter:description"
+        content="Building intelligent web applications powered by NLP, speech models, real-time backends, and modern frontend frameworks." />
     <meta name="twitter:image" content="reference/screen.png" />
     <link rel="icon" type="image/svg+xml" href="assets/bhumit-logo.svg?v=5" />
     <!-- Security Headers / CSP -->
@@ -31,7 +32,7 @@
     <meta http-equiv="X-Frame-Options" content="DENY" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
     <title>Bhumit | Full-Stack Developer & AI Engineer</title>
-    <link rel="stylesheet" href="assets/index.css?v=7.5" />
+    <link rel="stylesheet" href="assets/index.css?v=8.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -82,17 +83,20 @@
                         <span class="btn-hire-pulse"></span>
                         <span class="btn-hire-dot"></span>
                     </span>
-                    <svg class="btn-hire-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="btn-hire-icon" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M22 2L11 13"></path>
                         <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
                     </svg>
                     <span class="btn-hire-text">Hire Me</span>
-                    <svg class="btn-hire-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="btn-hire-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
                 </a>
-                <button class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false" aria-controls="mobileMenu">
+                <button class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false"
+                    aria-controls="mobileMenu">
                     <span></span><span></span><span></span>
                 </button>
             </div>
@@ -173,11 +177,7 @@
                         </label>
                     </div>
                     <div class="term-body" id="terminalBody">
-                        <div class="term-output" id="terminalOutput">
-                            <p class="term-line">// Booting Bhumit OS [v1.0.4]...</p>
-                            <p class="term-line">// Core modules: Full-Stack Dev, AI speech pipelines, Supabase DB.</p>
-                            <p class="term-line text-success">System online. Type 'help' or click shortcuts below.</p>
-                        </div>
+                        <div class="term-output" id="terminalOutput"></div>
                         <div class="term-input-line">
                             <span class="term-prompt">bhumit@portfolio:~$</span>
                             <input type="text" class="term-input" id="terminalInput" autocomplete="off"
@@ -322,6 +322,34 @@
                     </div>
                 </div>
 
+                <!-- Education Card -->
+                <div class="bento-card bento-edu tilt-3d reveal-up delay-2">
+                    <div class="bento-tag">Education</div>
+
+                    <div class="edu-item">
+                        <div class="edu-degree-row">
+                            <span class="edu-degree">
+                                <span class="status-dot pulsing" title="Currently Pursuing"></span>
+                                B.E. Computer Engineering
+                            </span>
+                            <span class="edu-year">2026</span>
+                        </div>
+                        <span class="edu-school">Neotech Technical Campus<br /><span
+                                style="opacity: 0.6; font-size: 11px;">Gujarat Technological University</span></span>
+                    </div>
+
+                    <div class="edu-item">
+                        <div class="edu-degree-row">
+                            <span class="edu-degree">
+                                Diploma in Information Technology
+                            </span>
+                            <span class="edu-year">2023</span>
+                        </div>
+                        <span class="edu-school">Parul Polytechnic Institute<br /><span
+                                style="opacity: 0.6; font-size: 11px;">Parul University</span></span>
+                    </div>
+                </div>
+
                 <!-- Tech Stack Pills Card -->
                 <div class="bento-card bento-stack reveal-up delay-3">
                     <div class="bento-tag">Current Core Stack</div>
@@ -378,9 +406,17 @@
                     <div class="arch-panel active" id="arch-fullstack">
                         <div class="arch-diagram">
                             <div class="arch-node">Client Web <span class="arch-pill">Next.js / React</span></div>
-                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg></div>
                             <div class="arch-node">Backend API <span class="arch-pill">FastAPI / Node</span></div>
-                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg></div>
                             <div class="arch-node">Database <span class="arch-pill">Supabase</span></div>
                         </div>
 
@@ -392,9 +428,17 @@
                     <div class="arch-panel" id="arch-ai">
                         <div class="arch-diagram">
                             <div class="arch-node">Audio In <span class="arch-pill">Whisper STT</span></div>
-                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg></div>
                             <div class="arch-node">NLP Engine <span class="arch-pill">Gemini / Claude</span></div>
-                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg></div>
                             <div class="arch-node">Synthesis <span class="arch-pill">Wav2Lip TTS</span></div>
                         </div>
 
@@ -406,9 +450,17 @@
                     <div class="arch-panel" id="arch-uiux">
                         <div class="arch-diagram">
                             <div class="arch-node">Wireframes <span class="arch-pill">Figma</span></div>
-                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg></div>
                             <div class="arch-node">Design Sys <span class="arch-pill">Tailwind</span></div>
-                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg></div>
                             <div class="arch-node">Interactions <span class="arch-pill">CSS / Framer</span></div>
                         </div>
 
@@ -420,9 +472,17 @@
                     <div class="arch-panel" id="arch-agency">
                         <div class="arch-diagram">
                             <div class="arch-node">Strategy <span class="arch-pill">Roadmap</span></div>
-                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg></div>
                             <div class="arch-node">Execution <span class="arch-pill">Engineering</span></div>
-                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                            <div class="arch-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg></div>
                             <div class="arch-node">Delivery <span class="arch-pill">Launch</span></div>
                         </div>
 
@@ -450,7 +510,12 @@
                 <!-- Category 1: Frontend & Core -->
                 <div class="matrix-card">
                     <div class="matrix-header">
-                        <div class="matrix-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div>
+                        <div class="matrix-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg></div>
                         <h3 class="matrix-category">Frontend & Core</h3>
                     </div>
                     <div class="matrix-tags">
@@ -480,7 +545,13 @@
                 <!-- Category 2: Backend & Databases -->
                 <div class="matrix-card">
                     <div class="matrix-header">
-                        <div class="matrix-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></div>
+                        <div class="matrix-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                </path>
+                            </svg></div>
                         <h3 class="matrix-category">Backend & Cloud DB</h3>
                     </div>
                     <div class="matrix-tags">
@@ -510,7 +581,14 @@
                 <!-- Category 3: AI & Speech Pipelines -->
                 <div class="matrix-card">
                     <div class="matrix-header">
-                        <div class="matrix-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg></div>
+                        <div class="matrix-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                                <circle cx="18" cy="5" r="3"></circle>
+                                <circle cx="6" cy="12" r="3"></circle>
+                                <circle cx="18" cy="19" r="3"></circle>
+                                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                            </svg></div>
                         <h3 class="matrix-category">AI & Speech Engineering</h3>
                     </div>
                     <div class="matrix-tags">
@@ -544,7 +622,13 @@
                 <!-- Category 4: Tools & Operations -->
                 <div class="matrix-card">
                     <div class="matrix-header">
-                        <div class="matrix-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg></div>
+                        <div class="matrix-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                            </svg></div>
                         <h3 class="matrix-category">DevOps & Workflows</h3>
                     </div>
                     <div class="matrix-tags">
@@ -604,7 +688,8 @@
                 <article class="case-study-card reveal-up delay-1" data-category="ai">
                     <div class="case-card-header">
                         <div class="case-img-wrap">
-                            <img src="reference/dubvibe_logo.svg?v=4" alt="DubVibe Pro" class="case-img" loading="lazy" />
+                            <img src="reference/dubvibe_logo.svg?v=4" alt="DubVibe Pro" class="case-img"
+                                loading="lazy" />
                             <div class="case-pill">AI Video Pipeline</div>
                         </div>
                         <div class="case-header-content">
@@ -641,16 +726,16 @@
                         </div>
                     </div>
                     <div class="case-json-xray">
-{
-  "system": "DubVibe Pro",
-  "stack": ["Python", "FastAPI"],
-  "ai_models": {
-    "translation": "Gemini Pro",
-    "speech_to_text": "Whisper",
-    "lip_sync": "Wav2Lip"
-  },
-  "impact": "90% cost reduction"
-}
+                        {
+                        "system": "DubVibe Pro",
+                        "stack": ["Python", "FastAPI"],
+                        "ai_models": {
+                        "translation": "Gemini Pro",
+                        "speech_to_text": "Whisper",
+                        "lip_sync": "Wav2Lip"
+                        },
+                        "impact": "90% cost reduction"
+                        }
                     </div>
                 </article>
 
@@ -658,7 +743,8 @@
                 <article class="case-study-card reveal-up delay-2" data-category="fullstack ai">
                     <div class="case-card-header">
                         <div class="case-img-wrap">
-                            <img src="reference/skillbridge_logo.svg?v=4" alt="SkillBridge AI" class="case-img" loading="lazy" />
+                            <img src="reference/skillbridge_logo.svg?v=4" alt="SkillBridge AI" class="case-img"
+                                loading="lazy" />
                             <div class="case-pill">Next.js 15 / Claude 4.5</div>
                         </div>
                         <div class="case-header-content">
@@ -694,13 +780,13 @@
                         </div>
                     </div>
                     <div class="case-json-xray">
-{
-  "project": "SkillBridge AI",
-  "stack": ["Next.js", "Supabase", "Tailwind"],
-  "ai_model": "Claude 3.5 Sonnet",
-  "features": ["WebSocket backend", "Real-time roleplay"],
-  "metrics": "500+ active beta users"
-}
+                        {
+                        "project": "SkillBridge AI",
+                        "stack": ["Next.js", "Supabase", "Tailwind"],
+                        "ai_model": "Claude 3.5 Sonnet",
+                        "features": ["WebSocket backend", "Real-time roleplay"],
+                        "metrics": "500+ active beta users"
+                        }
                     </div>
                 </article>
 
@@ -708,7 +794,8 @@
                 <article class="case-study-card reveal-up delay-1" data-category="fullstack">
                     <div class="case-card-header">
                         <div class="case-img-wrap">
-                            <img src="reference/vocaberry_logo.svg?v=6" alt="Vocaberry" class="case-img" loading="lazy" />
+                            <img src="reference/vocaberry_logo.svg?v=6" alt="Vocaberry" class="case-img"
+                                loading="lazy" />
                             <div class="case-pill">Language Learning App</div>
                         </div>
                         <div class="case-header-content">
@@ -743,15 +830,15 @@
                         </div>
                     </div>
                     <div class="case-json-xray">
-{
-  "app": "Vocaberry",
-  "stack": ["JavaScript", "HTML5", "Firebase"],
-  "features": [
-    "Spaced-repetition algorithm",
-    "AI mnemonics"
-  ],
-  "rating": "4.8/5 satisfaction"
-}
+                        {
+                        "app": "Vocaberry",
+                        "stack": ["JavaScript", "HTML5", "Firebase"],
+                        "features": [
+                        "Spaced-repetition algorithm",
+                        "AI mnemonics"
+                        ],
+                        "rating": "4.8/5 satisfaction"
+                        }
                     </div>
                 </article>
 
@@ -759,7 +846,8 @@
                 <article class="case-study-card reveal-up delay-2" data-category="frontend">
                     <div class="case-card-header">
                         <div class="case-img-wrap">
-                            <img src="reference/coregym_logo.svg?v=5" alt="Core Gym Platform" class="case-img" loading="lazy" />
+                            <img src="reference/coregym_logo.svg?v=5" alt="Core Gym Platform" class="case-img"
+                                loading="lazy" />
                             <div class="case-pill">High-Conversion Web App</div>
                         </div>
                         <div class="case-header-content">
@@ -794,16 +882,16 @@
                         </div>
                     </div>
                     <div class="case-json-xray">
-{
-  "client": "Core Gym",
-  "stack": ["HTML5", "CSS3", "JavaScript"],
-  "ui_ux": [
-    "Scroll-driven interactions",
-    "Responsive typography",
-    "Class booking flow"
-  ],
-  "impact": "45% conversion increase"
-}
+                        {
+                        "client": "Core Gym",
+                        "stack": ["HTML5", "CSS3", "JavaScript"],
+                        "ui_ux": [
+                        "Scroll-driven interactions",
+                        "Responsive typography",
+                        "Class booking flow"
+                        ],
+                        "impact": "45% conversion increase"
+                        }
                     </div>
                 </article>
 
@@ -884,44 +972,56 @@
                         <div class="node-icon-wrap">
                             <div class="node-pulse-ring"></div>
                             <div class="node-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                                </svg>
                             </div>
                         </div>
                         <div class="node-label">Engineering Core</div>
                     </div>
 
                     <!-- Certification Nodes -->
-                    <div class="tree-node node-cert node-ms" data-cert="ms" data-issuer="Microsoft Learn" data-title="Student Ambassador" data-role="Event Coordinator (Postman)" data-pdf="certificates/Bhumit_Vasava_Postman_Certificate.pdf">
+                    <div class="tree-node node-cert node-ms" data-cert="ms" data-issuer="Microsoft Learn"
+                        data-title="Student Ambassador" data-role="Event Coordinator (Postman)"
+                        data-pdf="certificates/Bhumit_Vasava_Postman_Certificate.pdf">
                         <div class="node-icon-wrap">
                             <div class="node-pulse-ring"></div>
                             <div class="node-icon">
                                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zM24 11.4H12.6V0H24v11.4z"/>
+                                    <path
+                                        d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zM24 11.4H12.6V0H24v11.4z" />
                                 </svg>
                             </div>
                         </div>
                         <div class="node-label">Microsoft <span class="node-badge">Verified</span></div>
                     </div>
 
-                    <div class="tree-node node-cert node-cisco" data-cert="cisco" data-issuer="Cisco Networking Academy" data-title="Operating Systems Basics" data-role="OS Architecture (Oct 2024)" data-pdf="certificates/Bhumit_Vasava_OS_Certificate.pdf">
+                    <div class="tree-node node-cert node-cisco" data-cert="cisco" data-issuer="Cisco Networking Academy"
+                        data-title="Operating Systems Basics" data-role="OS Architecture (Oct 2024)"
+                        data-pdf="certificates/Bhumit_Vasava_OS_Certificate.pdf">
                         <div class="node-icon-wrap">
                             <div class="node-pulse-ring"></div>
                             <div class="node-icon">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                                    <path d="M6 18v-4M9 18V9M12 18V6M15 18V9M18 18v-4M3 18v-1"/>
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round">
+                                    <path d="M6 18v-4M9 18V9M12 18V6M15 18V9M18 18v-4M3 18v-1" />
                                 </svg>
                             </div>
                         </div>
                         <div class="node-label">Cisco OS <span class="node-badge">Verified</span></div>
                     </div>
 
-                    <div class="tree-node node-cert node-google" data-cert="google" data-issuer="Google AI Studio" data-title="AI Studio Participation" data-role="Workshop Completion (Dec 2025)" data-pdf="certificates/Bhumit_Vasava_AI_Studio_Certificate.pdf">
+                    <div class="tree-node node-cert node-google" data-cert="google" data-issuer="Google AI Studio"
+                        data-title="AI Studio Participation" data-role="Workshop Completion (Dec 2025)"
+                        data-pdf="certificates/Bhumit_Vasava_AI_Studio_Certificate.pdf">
                         <div class="node-icon-wrap">
                             <div class="node-pulse-ring"></div>
                             <div class="node-icon">
                                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 23c6.075 0 11-4.925 11-11S18.075 1 12 1 1 5.925 1 12s4.925 11 11 11z" fill="none" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M12 6v12M6 12h12"/>
+                                    <path d="M12 23c6.075 0 11-4.925 11-11S18.075 1 12 1 1 5.925 1 12s4.925 11 11 11z"
+                                        fill="none" stroke="currentColor" stroke-width="2" />
+                                    <path d="M12 6v12M6 12h12" />
                                 </svg>
                             </div>
                         </div>
@@ -1064,12 +1164,15 @@
                 <a href="#home" class="logo" style="display: flex; align-items: center; text-decoration: none;">
                     <img src="assets/bhumit-logo.svg?v=5" alt="Bhumit Logo" style="height: 28px; display: block;" />
                 </a>
-                
+
                 <div class="footer-contact" style="display: flex; gap: 20px; align-items: center;">
                     <p class="footer-copy">&copy; 2026 Bhumit · Pixel Forge Agency. All rights reserved.</p>
-                    <a href="mailto:vasavabhumit4@gmail.com" class="btn-hire" style="padding: 0.4rem 1rem; font-size: 12px; transform: none; box-shadow: none; white-space: nowrap;">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px;">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <a href="mailto:vasavabhumit4@gmail.com" class="btn-hire"
+                        style="padding: 0.4rem 1rem; font-size: 12px; transform: none; box-shadow: none; white-space: nowrap;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" style="margin-right: 4px;">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
                             <polyline points="22,6 12,13 2,6"></polyline>
                         </svg>
                         Email Me
@@ -1100,37 +1203,69 @@
                 <!-- Group: Quick Navigation -->
                 <div class="cmd-group-title">QUICK NAVIGATION</div>
                 <div class="cmd-item active" data-action="nav" data-target="#home">
-                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span>
+                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg></span>
                     <span class="cmd-item-label">Hero & Overview</span>
                     <span class="cmd-kbd">↵ Jump</span>
                 </div>
                 <div class="cmd-item" data-action="nav" data-target="#about">
-                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg></span>
+                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                            <line x1="9" y1="21" x2="9" y2="9"></line>
+                        </svg></span>
                     <span class="cmd-item-label">Executive Profile (Bento Grid)</span>
                     <span class="cmd-kbd">↵ Jump</span>
                 </div>
                 <div class="cmd-item" data-action="nav" data-target="#skills">
-                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
+                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg></span>
                     <span class="cmd-item-label">Skill Matrix & Competencies</span>
                     <span class="cmd-kbd">↵ Jump</span>
                 </div>
                 <div class="cmd-item" data-action="nav" data-target="#projects">
-                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></span>
+                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg></span>
                     <span class="cmd-item-label">Case Studies (4 Projects)</span>
                     <span class="cmd-kbd">↵ Jump</span>
                 </div>
                 <div class="cmd-item" data-action="nav" data-target="#experience">
-                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></span>
+                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                        </svg></span>
                     <span class="cmd-item-label">Journey & Experience Timeline</span>
                     <span class="cmd-kbd">↵ Jump</span>
                 </div>
                 <div class="cmd-item" data-action="nav" data-target="#certifications">
-                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg></span>
+                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                            <circle cx="12" cy="8" r="7"></circle>
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                        </svg></span>
                     <span class="cmd-item-label">Verified Credentials (MS / Cisco / Google)</span>
                     <span class="cmd-kbd">↵ Jump</span>
                 </div>
                 <div class="cmd-item" data-action="nav" data-target="#contact">
-                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
+                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg></span>
                     <span class="cmd-item-label">Code Console Contact Form</span>
                     <span class="cmd-kbd">↵ Jump</span>
                 </div>
@@ -1138,17 +1273,30 @@
                 <!-- Group: Quick Actions -->
                 <div class="cmd-group-title">QUICK ACTIONS</div>
                 <div class="cmd-item" data-action="copy-email">
-                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></span>
+                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg></span>
                     <span class="cmd-item-label">Copy Email (vasavabhumit4@gmail.com)</span>
                     <span class="cmd-kbd">Action</span>
                 </div>
                 <div class="cmd-item" data-action="download-resume">
-                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg></span>
+                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                        </svg></span>
                     <span class="cmd-item-label">Download Resume (PDF)</span>
                     <span class="cmd-kbd">Action</span>
                 </div>
                 <div class="cmd-item" data-action="toggle-cli-mode">
-                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+                    <span class="cmd-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg></span>
                     <span class="cmd-item-label">Toggle Terminal CLI Theme</span>
                     <span class="cmd-kbd">Action</span>
                 </div>
@@ -1164,7 +1312,12 @@
     <!-- ===== PROJECT DEEP-DIVE DRAWER MODAL ===== -->
     <div class="project-drawer-backdrop" id="projectDrawerBackdrop" aria-hidden="true">
         <div class="project-drawer-dialog" role="dialog" aria-modal="true">
-            <button class="project-drawer-close" id="projectDrawerClose" aria-label="Close drawer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+            <button class="project-drawer-close" id="projectDrawerClose" aria-label="Close drawer"><svg width="24"
+                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="square">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg></button>
             <div class="project-drawer-header">
                 <span class="project-drawer-category" id="drawerCategory">AI & SPEECH PIPELINE</span>
                 <h2 class="project-drawer-title" id="drawerTitle">DubVibe Pro</h2>

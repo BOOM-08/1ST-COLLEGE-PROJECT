@@ -79,10 +79,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Smooth ring follow & snapping loop
         function animateRing() {
-            if (isSnapped && targetX !== null && targetY !== null) {
+            if (isSnapped && snappedElement) {
+                // Continuously update target coordinates because the element might be moving (3D tilt)
+                const rect = snappedElement.getBoundingClientRect();
+                targetX = rect.left + rect.width / 2;
+                targetY = rect.top + rect.height / 2;
+                targetWidth = rect.width;
+                targetHeight = rect.height;
+
                 // Snap smoothly to targets (centered coordinates)
-                ringX += (targetX - ringX) * 0.16;
-                ringY += (targetY - ringY) * 0.16;
+                ringX += (targetX - ringX) * 0.2;
+                ringY += (targetY - ringY) * 0.2;
                 ring.style.width = (targetWidth + 12) + 'px';
                 ring.style.height = (targetHeight + 12) + 'px';
                 ring.style.borderRadius = '8px'; // rectangular rounded frame
@@ -91,8 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Regular circle follow mouse
                 ringX += (mouseX - ringX) * 0.12;
                 ringY += (mouseY - ringY) * 0.12;
-                ring.style.width = '36px';
-                ring.style.height = '36px';
+                ring.style.width = '42px';
+                ring.style.height = '42px';
                 ring.style.borderRadius = '50%';
                 ring.style.borderColor = 'rgba(124, 111, 239, 0.5)';
             }
@@ -105,20 +112,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Magnetic link listeners
         const magnetics = '.nav-link, .logo, .bio-link, .social-pill, .btn-hire';
+        let snappedElement = null;
+        
         document.querySelectorAll(magnetics).forEach(el => {
             el.addEventListener('mouseenter', () => {
-                const rect = el.getBoundingClientRect();
-                // We use fixed relative position to viewport because ring is position: fixed
-                targetX = rect.left + rect.width / 2;
-                targetY = rect.top + rect.height / 2;
-                targetWidth = rect.width;
-                targetHeight = rect.height;
+                snappedElement = el;
                 isSnapped = true;
             });
             el.addEventListener('mouseleave', () => {
                 isSnapped = false;
-                targetX = null;
-                targetY = null;
+                snappedElement = null;
             });
         });
 
@@ -127,8 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll(growItems).forEach(el => {
             el.addEventListener('mouseenter', () => {
                 if (!isSnapped) {
-                    ring.style.width = '64px';
-                    ring.style.height = '64px';
+                    ring.style.width = '72px';
+                    ring.style.height = '72px';
                     ring.style.borderColor = 'rgba(124, 111, 239, 0.7)';
                 }
             });
@@ -329,14 +332,58 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ============================================================
-       3.5. INTERACTIVE TERMINAL CLI LOGIC
+       3.5. INTERACTIVE TERMINAL CLI LOGIC & BOOT SEQUENCE
        ============================================================ */
     const termInput = document.getElementById('terminalInput');
     const termOutput = document.getElementById('terminalOutput');
     const termBody = document.getElementById('terminalBody');
     const termWidget = document.getElementById('heroTerminal');
+    const termInputLine = document.querySelector('.term-input-line');
 
     if (termInput && termOutput && termBody && termWidget) {
+        
+        // Hide input line until boot finishes
+        if (termInputLine) termInputLine.style.display = 'none';
+        
+        const bootLines = [
+            { text: "// Booting Bhumit OS [v1.0.4]...", class: "term-line" },
+            { text: "// Core modules: Full-Stack Dev, AI speech pipelines, Supabase DB.", class: "term-line" },
+            { text: "System online. Type 'help' or click shortcuts below.", class: "term-line text-success" }
+        ];
+        
+        let currentLine = 0;
+        let currentChar = 0;
+        let currentEl = null;
+
+        function typeBootSequence() {
+            if (currentLine < bootLines.length) {
+                if (currentChar === 0) {
+                    currentEl = document.createElement('p');
+                    currentEl.className = bootLines[currentLine].class;
+                    termOutput.appendChild(currentEl);
+                }
+                
+                if (currentChar < bootLines[currentLine].text.length) {
+                    currentEl.textContent += bootLines[currentLine].text.charAt(currentChar);
+                    currentChar++;
+                    // Add some random typing speed jitter (10ms to 40ms)
+                    setTimeout(typeBootSequence, Math.random() * 30 + 10);
+                } else {
+                    currentLine++;
+                    currentChar = 0;
+                    // Pause slightly between lines
+                    setTimeout(typeBootSequence, 300);
+                }
+            } else {
+                // Boot sequence finished
+                if (termInputLine) termInputLine.style.display = 'flex';
+                termBody.scrollTop = termBody.scrollHeight;
+            }
+        }
+        
+        // Start boot sequence slightly after page load
+        setTimeout(typeBootSequence, 1200);
+
         // Automatically focus input when clicking terminal container
         termWidget.addEventListener('click', () => termInput.focus());
 
@@ -772,43 +819,77 @@ AI/ML:     NLP pipelines, Gemini API, Claude API, Wav2Lip`;
     }
 
     /* ============================================================
-       16. INTERACTIVE 3D MOUSE TILT ON CARDS
+       16. INTERACTIVE 3D MOUSE TILT ON CARDS (GENTLE VERSION)
        ============================================================ */
     document.querySelectorAll('.tilt-3d').forEach(card => {
         let rafId = null;
+        let currentRotX = 0, currentRotY = 0;
+        let targetRotX = 0, targetRotY = 0;
         
+        // Smooth interpolation loop — card gently eases toward target
+        function smoothTilt() {
+            currentRotX += (targetRotX - currentRotX) * 0.08;
+            currentRotY += (targetRotY - currentRotY) * 0.08;
+            
+            card.style.transform = `perspective(1200px) rotateX(${currentRotX}deg) rotateY(${currentRotY}deg)`;
+            rafId = requestAnimationFrame(smoothTilt);
+        }
+
         card.addEventListener('mouseenter', () => {
-            // Absolutely zero CSS transition while hovering for strict 1:1 hardware accelerated tracking
-            card.style.transition = 'none';
+            if (!rafId) rafId = requestAnimationFrame(smoothTilt);
         });
 
         card.addEventListener('mousemove', (e) => {
-            // Cancel previous frame to prevent rendering backlog (latency)
-            if (rafId) cancelAnimationFrame(rafId);
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
             
-            // Schedule transform on the next animation frame
-            rafId = requestAnimationFrame(() => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                // Calculate tilt angles based on mouse position relative to center
-                const rotateX = ((y - centerY) / centerY) * -6;
-                const rotateY = ((x - centerX) / centerX) * 6;
-                
-                // Apply the 3D transform
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px) scale(1.02)`;
-            });
+            // Very gentle tilt — max 2 degrees
+            targetRotX = ((y - centerY) / centerY) * -2;
+            targetRotY = ((x - centerX) / centerX) * 2;
         });
 
         card.addEventListener('mouseleave', () => {
-            if (rafId) cancelAnimationFrame(rafId);
-            // Restore the slow CSS transition for a graceful snap-back to origin
-            card.style.transition = 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)';
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0) scale(1)';
+            targetRotX = 0;
+            targetRotY = 0;
+            
+            // Allow the smoothTilt loop to ease it back to 0, 0
+            // Then cancel the loop after it's visually flat (e.g. 500ms)
+            setTimeout(() => {
+                if (rafId && targetRotX === 0 && targetRotY === 0) {
+                    cancelAnimationFrame(rafId);
+                    rafId = null;
+                    card.style.transform = 'perspective(1200px) rotateX(0) rotateY(0)';
+                }
+            }, 600);
         });
+
+        // FIX: Continuous 3D transforms can cancel native 'click' events 
+        // We simulate a perfect native click using mousedown + global mouseup
+        card.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mousedown', (e) => {
+                if (e.button === 0 || e.button === 1) {
+                    if (el.tagName === 'A' && el.href && !el.href.includes('#')) {
+                        e.preventDefault();
+                        el.classList.add('simulated-active');
+                        // Store the pending link directly on the window object for the global listener
+                        window._pending3DLink = el;
+                    }
+                }
+            });
+        });
+    });
+
+    // Global mouseup to catch the release and open the link safely
+    window.addEventListener('mouseup', (e) => {
+        if (window._pending3DLink) {
+            const link = window._pending3DLink;
+            link.classList.remove('simulated-active');
+            window.open(link.href, link.target === '_blank' ? '_blank' : '_self');
+            window._pending3DLink = null;
+        }
     });
 
     /* ============================================================
